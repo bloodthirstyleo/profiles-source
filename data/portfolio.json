@@ -1,0 +1,418 @@
+{
+  "_comment": "Single source of truth for portfolio UI data. Edit this file to update content.",
+  "home": {
+    "name": "Vo Manh Khanh",
+    "alias": "Khanh",
+    "role": "Full Stack Web Developer",
+    "roles": [
+      "Full Stack Developer",
+      "Angular Developer",
+      "React Developer",
+      "Next.js Developer",
+      ".NET Developer",
+      "Node.js Developer",
+      "Open to Freelance"
+    ],
+    "experience": "5+ years",
+    "location": "Ho Chi Minh City, Vietnam",
+    "stack": [
+      "Angular",
+      "React",
+      "Next.js",
+      ".NET",
+      "Node.js",
+      "MySQL",
+      "Docker"
+    ],
+    "available": true,
+    "codeCardFilename": "developer.cs",
+    "photo": "assets/img/profile-image.jpg",
+    "photoMobile": "assets/img/profile-image-mobile.jpg",
+    "intro": "Full Stack Web Developer with 5+ years of experience building scalable web applications using Angular, React, Next.js, .NET and Node.js.",
+    "seek": "Open to full-time, remote and freelance opportunities"
+  },
+  "personalInfo": [
+    {
+      "id": 11,
+      "data": [
+        {
+          "id": 1,
+          "type": "First Name",
+          "value": "Khanh"
+        },
+        {
+          "id": 2,
+          "type": "Last Name",
+          "value": "Vo Manh"
+        },
+        {
+          "id": 3,
+          "type": "Age",
+          "value": "29 Years"
+        },
+        {
+          "id": 4,
+          "type": "Nationality",
+          "value": "Viet Nam"
+        },
+        {
+          "id": 5,
+          "type": "Freelance",
+          "value": "Available"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "data": [
+        {
+          "id": 6,
+          "type": "Address",
+          "value": "An Nhon - Ho Chi Minh City"
+        },
+        {
+          "id": 7,
+          "type": "Phone",
+          "value": "(+84) 337 116 462"
+        },
+        {
+          "id": 8,
+          "type": "Email",
+          "value": "bloodthirstyleo@gmail.com"
+        },
+        {
+          "id": 10,
+          "type": "Langages",
+          "value": "Vietnamese, English"
+        }
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "id": 1,
+      "title": "Years of Full Stack experience",
+      "value": "5+"
+    },
+    {
+      "id": 2,
+      "title": "Projects delivered",
+      "value": "8+"
+    },
+    {
+      "id": 3,
+      "title": "Primary frontend",
+      "value": "Angular & ReactJS"
+    },
+    {
+      "id": 4,
+      "title": "Primary backend",
+      "value": ".NET & Node.js"
+    }
+  ],
+  "techStack": [
+    {
+      "id": 1,
+      "title": "ASP.NET, Node.js, WebApi, NestJS",
+      "value": "Backend"
+    },
+    {
+      "id": 2,
+      "title": "Angular, ReactJS, Next.js, HTML, CSS, JavaScript, TailwindCSS, TypeScript",
+      "value": "Frontend"
+    },
+    {
+      "id": 3,
+      "title": "MySQL, Postgres and MongoDB <span className=\"block\">(able to design and optimize database)</span>",
+      "value": "Database"
+    },
+    {
+      "id": 4,
+      "title": "Docker, Firebase, Git, GitHub, GitLab, CI/CD pipelines",
+      "value": "DevOps"
+    },
+    {
+      "id": 5,
+      "title": "Software Development Methodology",
+      "value": "Agile & Scrum"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "date": "2020 - Present",
+      "title": "Freelancer",
+      "company": "Full Stack Developer",
+      "projectName": "Freelance Web Development",
+      "desc": "Developing modern web applications using Angular, React, Next.js, .NET and Node.js for multiple clients.",
+      "be": ".NET, Node.js, NestJS",
+      "fe": "Angular, React, Next.js, TailwindCSS",
+      "db": "MySQL, SQL Server, MongoDB, MariaDB",
+      "clound": "Docker, Firebase",
+      "color": "blue"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "date": "2015 - Present",
+      "title": "Industrial University of Ho Chi Minh City",
+      "unv": "Information Technology / Chemical Technology"
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "value": "80"
+    },
+    {
+      "id": 2,
+      "name": "React / Next.js",
+      "value": "75"
+    },
+    {
+      "id": 3,
+      "name": ".NET",
+      "value": "70"
+    },
+    {
+      "id": 4,
+      "name": "Node.js / NestJS",
+      "value": "75"
+    },
+    {
+      "id": 5,
+      "name": "TypeScript",
+      "value": "80"
+    },
+    {
+      "id": 6,
+      "name": "Database Design",
+      "value": "70"
+    },
+    {
+      "id": 7,
+      "name": "Docker & Git",
+      "value": "70"
+    },
+    {
+      "id": 8,
+      "name": "AI Integration",
+      "value": "65"
+    },
+    {
+      "id": 9,
+      "name": "Communication & Teamwork",
+      "value": "70"
+    }
+  ],
+  "portfolio": [
+    {
+      "id": 1,
+      "title": "AI Travel Assistant & Smart Tour Recommendation Platform",
+      "type": "website",
+      "src": "",
+      "img": "assets/img/projects/ai-travel.jpg",
+      "project": "Web Application",
+      "client": "Travel Industry",
+      "langages": "Next.js, NestJS, TailwindCSS, MySQL, OpenAI, DeepSeek",
+      "previewLink": ""
+    },
+    {
+      "id": 2,
+      "title": "Mama's Pizza – Food Ordering & Admin Management",
+      "type": "website",
+      "src": "",
+      "img": "assets/img/projects/project-2.jpg",
+      "project": "Food Ordering Platform",
+      "client": "Mama's Pizza",
+      "langages": "Next.js, NestJS, TailwindCSS, MySQL",
+      "previewLink": "https://mamapizza.vn/"
+    },
+    {
+      "id": 3,
+      "title": "Thích Tour Management System",
+      "type": "website",
+      "src": "",
+      "img": "assets/img/projects/project-3.jpg",
+      "project": "Tour Management System",
+      "client": "Thích Tour",
+      "langages": "Angular 18, Ant Design, .NET 8, MariaDB, i18n",
+      "previewLink": ""
+    }
+  ],
+  "socialLinks": [
+    {
+      "id": 1,
+      "icon": "fa fa-facebook",
+      "link": "https://www.facebook.com/khanh.vomanh/"
+    },
+    {
+      "id": 2,
+      "icon": "fa fa-linkedin",
+      "link": "https://www.linkedin.com/in/vo-manh-khanh-64b321145/"
+    },
+    {
+      "id": 3,
+      "icon": "fa fa-github",
+      "link": "https://github.com/bloodthirstyleo"
+    }
+  ],
+  "footer": {
+    "name": "Phat Nguyen Tan",
+    "tagline": ".NET Web Developer — Ho Chi Minh City",
+    "email": "nguyentanphatuit@mail.com",
+    "phone": "(+84) 869 164 648",
+    "copyright": "2026 Phat Nguyen Tan. All rights reserved."
+  },
+  "hobbies": [
+    {
+      "icon": "🎮",
+      "label": "Gaming",
+      "desc": "Strategy & open-world RPGs on PC"
+    },
+    {
+      "icon": "🥊",
+      "label": "Boxing",
+      "desc": "Bag work & shadow boxing for fitness"
+    },
+    {
+      "icon": "✈️",
+      "label": "Travel",
+      "desc": "Exploring new places and cultures"
+    },
+    {
+      "icon": "📚",
+      "label": "Reading",
+      "desc": "Tech blogs & novels"
+    }
+  ],
+  "homeTechStack": [
+    {
+      "color": "blue",
+      "techs": [
+        {
+          "name": ".NET 8",
+          "primary": true
+        },
+        {
+          "name": "C#",
+          "primary": true
+        },
+        {
+          "name": "Node.js",
+          "primary": true
+        },
+        { "name": "NestJS", "primary": true },
+        {
+          "name": "ASP.NET Core",
+          "primary": false
+        },
+        {
+          "name": "Web API",
+          "primary": false
+        },
+        {
+          "name": "Entity Framework",
+          "primary": false
+        },
+        {
+          "name": "SignalR",
+          "primary": false
+        },
+        {
+          "name": "Microservices",
+          "primary": false
+        },
+        {
+          "name": "gRPC",
+          "primary": false
+        },
+        {
+          "name": "MediatR",
+          "primary": false
+        },
+        {
+          "name": "AutoMapper",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "color": "sky",
+      "techs": [
+        {
+          "name": "ReactJS",
+          "primary": true
+        },
+        {
+          "name": "Angular",
+          "primary": true
+        },
+        {
+          "name": "Next.js",
+          "primary": true
+        },
+        { "name": "Tailwind CSS", "primary": true },
+        {
+          "name": "CSS3",
+          "primary": true
+        },
+        {
+          "name": "Redux",
+          "primary": false
+        },
+        {
+          "name": "TypeScript",
+          "primary": true
+        },
+        {
+          "name": "JavaScript",
+          "primary": true
+        },       
+        {
+          "name": "HTML5",
+          "primary": true
+        },
+        {
+          "name": "CSS3",
+          "primary": false
+        }
+      ]
+    },
+    {
+      "color": "purple",
+      "techs": [
+        {
+          "name": "MS SQL",
+          "primary": false
+        },
+        {
+          "name": "MySQL",
+          "primary": true
+        },
+        {
+          "name": "PostgreSQL",
+          "primary": true
+        },
+        {
+          "name": "MongoDB",
+          "primary": true
+        },
+        {
+          "name": "Redis",
+          "primary": false
+        },
+        {
+          "name": "Elasticsearch",
+          "primary": false
+        },
+        {
+          "name": "SQLite",
+          "primary": false
+        }
+      ]
+    }
+  ]
+}

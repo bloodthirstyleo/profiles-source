@@ -1,0 +1,20 @@
+{
+  "title": "Personal Portfolio",
+  "description": "Personal Portfolio - Phat Nguyen Tan, .NET Web Developer",
+  "icons": {
+    "icon": "/favicon.ico",
+    "shortcut": "/favicon.ico"
+  },
+  "openGraph": {
+    "type": "website",
+    "title": "Phat Nguyen Tan - .NET Web Developer",
+    "description": "Portfolio of Phat Nguyen Tan — .NET Developer with 5.5 years experience in ASP.NET, .NET Core, ReactJS, and cloud solutions.",
+    "images": ["/assets/img/profile-image.jpg"]
+  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Phat Nguyen Tan - .NET Web Developer",
+    "description": "Portfolio of Phat Nguyen Tan — .NET Developer with 5.5 years experience in ASP.NET, .NET Core, ReactJS, and cloud solutions.",
+    "images": ["/assets/img/profile-image.jpg"]
+  }
+}

@@ -1,0 +1,193 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+
+/* =====================================================
+   Tunis Portfolio Template – Reconstructed Global Styles
+   ===================================================== */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    @apply bg-black text-white overflow-x-hidden;
+  }
+}
+
+/* Animated Background – top sliding yellow line */
+@layer utilities {
+  .anim--effect-3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ffb400;
+    transform: translate3d(-100%, 0, 0);
+    animation: slideLine 2s ease-in-out forwards;
+  }
+
+  @keyframes slideLine {
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+/* =====================================================
+   Circle Progress Bars (CSS-only pie charts)
+   ===================================================== */
+.c100 {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #252525;
+  font-size: 21px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c100 span {
+  position: absolute;
+  z-index: 1;
+  font-weight: 600;
+}
+
+.c100 .slice {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 100px, 100px, 50px);
+}
+
+.c100 .bar,
+.c100 .fill {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #ffb400;
+  border-radius: 50%;
+  clip: rect(0, 50px, 100px, 0);
+}
+
+.c100 .bar {
+  transition: transform 1s linear;
+}
+
+.c100.p85 .bar  { transform: rotate(306deg); }
+.c100.p50 .bar  { transform: rotate(180deg); }
+.c100.p65 .bar  { transform: rotate(234deg); }
+.c100.p80 .bar  { transform: rotate(288deg); }
+.c100.p100 .bar { transform: rotate(360deg); }
+
+/* =====================================================
+   Portfolio Item Hover Overlay
+   ===================================================== */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .overlay {
+  opacity: 1;
+}
+
+/* =====================================================
+   Blog list item hover
+   ===================================================== */
+.blog-list-item {
+  @apply relative overflow-hidden rounded-5;
+}
+
+.blog-list-item img {
+  transition: transform 0.3s ease;
+}
+
+.blog-list-item:hover img {
+  transform: scale(1.05);
+}
+
+.blog-list-item .blog-overlay {
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+}
+
+.blog-list-item:hover .blog-overlay {
+  @apply opacity-100;
+}
+
+/* =====================================================
+   Form input styles
+   ===================================================== */
+Input:focus,
+Textarea:focus {
+  outline: none;
+}
+
+/* =====================================================
+   Preloader
+   ===================================================== */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #333;
+  border-top-color: #ffb400;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   Home hero background
+   ===================================================== */
+.home-bg {
+  background-image: url("/assets/img/profile-image.jpg");
+  background-size: cover;
+  background-position: center;
+}
