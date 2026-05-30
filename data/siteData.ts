@@ -26,8 +26,8 @@ export interface HomeData { name: string; role: string; photo: string; photoMobi
 export const homeData: HomeData = {
   name: data.home?.name || "Phat Nguyen Tan",
   role: data.home?.role || ".NET Web Developer",
-  photo: data.home?.photo || "/assets/img/profile-image.jpg",
-  photoMobile: data.home?.photoMobile || "/assets/img/profile-image-mobile.jpg",
+  photo: data.home?.photo || "/assets/img/profile-image.png",
+  photoMobile: data.home?.photoMobile || "/assets/img/profile-image-mobile.png",
 };
 
 /* ─── Section data ─── */
