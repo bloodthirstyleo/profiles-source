@@ -187,7 +187,8 @@ Textarea:focus {
    Home hero background
    ===================================================== */
 .home-bg {
-  background-image: url("/assets/img/profile-image.jpg");
+  /* Updated to correct image path */
+  background-image: url("/assets/img/profile-image.png");
   background-size: cover;
   background-position: center;
 }

@@ -32,3 +32,9 @@ yarn-error.log*
 
 # Typescript build info
 *.tsbuildinfo
+
+# Agents & Coding Assistants
+.agents/
+.claude/
+.codex/
+.gemini/

@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="home-bg absolute inset-0 bg-no-repeat bg-cover bg-center flex items-center justify-center"
+      className="home-bg absolute inset-0 bg-no-repeat bg-cover bg-center flex items-center justify-center min-h-screen"
     >
       <div className="text-center text-white px-4">
         <h1 className="text-fs-60 xs:text-fs-40 font-bold uppercase mb-4">
