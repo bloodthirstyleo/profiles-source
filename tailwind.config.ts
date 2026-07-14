@@ -18,8 +18,8 @@ const config: Config = {
         grey: "#ddd",
       },
       fontFamily: {
-        Poppins: ["Poppins", "sans-serif"],
-        "Open-sans": ["Open Sans", "sans-serif"],
+        Poppins: ["var(--font-poppins)", "sans-serif"],
+        "Open-sans": ["var(--font-open-sans)", "sans-serif"],
       },
       fontSize: {
         "fs-12": "12px",

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import { portfolioWorks } from "@/data/siteData";
 
@@ -50,10 +51,12 @@ export default function PortfolioSection() {
             >
               {/* Image Container */}
               <div className="relative rounded-xl overflow-hidden aspect-video mb-4 bg-zinc-900/50 border border-white/5">
-                <img
+                <Image
                   src={work.src}
                   alt={work.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 {/* Modern Hover Overlay */}
                 <div className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center gap-4">

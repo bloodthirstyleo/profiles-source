@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import {
   personalInfo,
@@ -25,6 +26,15 @@ export default function AboutSection() {
                 <i className="fa-solid fa-address-card text-blue-400" />
                 Personal Info
               </h3>
+              <div className="hidden xs:block relative rounded-full border-4 border-solid border-zinc-800 w-[230px] h-[230px] mb-6 mx-auto overflow-hidden">
+                <Image
+                  src="/assets/img/profile-image-mobile.png"
+                  alt="Profile mobile"
+                  fill
+                  sizes="230px"
+                  className="object-cover"
+                />
+              </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 font-Open-sans text-fs-14 text-zinc-300">
                 {personalInfo.flatMap((group) => group.data).map((item) => (
                   <div key={item.id} className="border-b border-white/5 pb-2">

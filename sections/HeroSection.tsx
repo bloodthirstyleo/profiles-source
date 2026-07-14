@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import portfolio from "@/data/portfolio.json";
 
 export default function HeroSection() {
@@ -20,10 +21,13 @@ export default function HeroSection() {
             
             {/* Main image container */}
             <div className="relative w-64 h-64 md:w-80 md:h-[420px] rounded-2xl overflow-hidden glass-panel border border-white/20">
-              <img
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              <Image
+                className="transition-transform duration-500 group-hover:scale-105 object-cover"
                 src={photo || "/assets/img/profile-image.png"}
                 alt={name}
+                fill
+                priority
+                sizes="(max-width: 768px) 256px, 320px"
               />
             </div>
           </div>

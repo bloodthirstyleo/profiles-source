@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
-
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-poppins), sans-serif;
     @apply bg-[#08080a] text-zinc-100 overflow-x-hidden min-h-screen relative;
   }
 }

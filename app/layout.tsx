@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
+import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { TunisProvider } from "@/contexts/TunisContext";
 import metadataJson from "@/data/metadata.json";
 import Navbar from "@/components/Navbar";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+});
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-open-sans",
+});
 
 export const metadata: Metadata = metadataJson;
 
@@ -15,7 +28,7 @@ export default function RootLayout({
     <TunisProvider>
       <html
         lang="en"
-        className="overflow-x-hidden min-h-screen"
+        className={`${poppins.variable} ${openSans.variable} overflow-x-hidden min-h-screen`}
       >
         <head>
           <link rel="stylesheet" href="/assets/css/skins/blue.css" />
