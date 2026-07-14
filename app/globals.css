@@ -4,10 +4,6 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
-/* =====================================================
-   Tunis Portfolio Template – Reconstructed Global Styles
-   ===================================================== */
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -15,180 +11,73 @@
 
   body {
     font-family: "Poppins", sans-serif;
-    @apply bg-black text-white overflow-x-hidden;
+    @apply bg-[#08080a] text-zinc-100 overflow-x-hidden min-h-screen relative;
   }
 }
 
-/* Animated Background – top sliding yellow line */
 @layer utilities {
-  .anim--effect-3::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: #ffb400;
-    transform: translate3d(-100%, 0, 0);
-    animation: slideLine 2s ease-in-out forwards;
+  /* Glassmorphism Styles */
+  .glass-panel {
+    @apply bg-white/[0.02] backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
   }
 
-  @keyframes slideLine {
-    to {
-      transform: translate3d(0, 0, 0);
+  .glass-panel-hover {
+    @apply transition-all duration-300 hover:bg-white/[0.04] hover:border-white/20 hover:shadow-[0_8px_32px_0_rgba(59,130,246,0.1)];
+  }
+
+  /* Aurora Background Animations */
+  @keyframes aurora-1 {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.15);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
     }
   }
-}
 
-/* =====================================================
-   Circle Progress Bars (CSS-only pie charts)
-   ===================================================== */
-.c100 {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #252525;
-  font-size: 21px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  @keyframes aurora-2 {
+    0%, 100% {
+      transform: translate(0px, 0px) scale(1.1);
+    }
+    50% {
+      transform: translate(-40px, 40px) scale(0.85);
+    }
+  }
 
-.c100 span {
-  position: absolute;
-  z-index: 1;
-  font-weight: 600;
-}
+  .animate-aurora-slow {
+    animation: aurora-1 25s infinite alternate ease-in-out;
+  }
 
-.c100 .slice {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  clip: rect(0, 100px, 100px, 50px);
-}
+  .animate-aurora-medium {
+    animation: aurora-2 18s infinite alternate ease-in-out;
+  }
 
-.c100 .bar,
-.c100 .fill {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 5px solid #ffb400;
-  border-radius: 50%;
-  clip: rect(0, 50px, 100px, 0);
-}
-
-.c100 .bar {
-  transition: transform 1s linear;
-}
-
-.c100.p85 .bar  { transform: rotate(306deg); }
-.c100.p50 .bar  { transform: rotate(180deg); }
-.c100.p65 .bar  { transform: rotate(234deg); }
-.c100.p80 .bar  { transform: rotate(288deg); }
-.c100.p100 .bar { transform: rotate(360deg); }
-
-/* =====================================================
-   Portfolio Item Hover Overlay
-   ===================================================== */
-.portfolio-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.portfolio-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.05);
-}
-
-.portfolio-item .overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .overlay {
-  opacity: 1;
-}
-
-/* =====================================================
-   Blog list item hover
-   ===================================================== */
-.blog-list-item {
-  @apply relative overflow-hidden rounded-5;
-}
-
-.blog-list-item img {
-  transition: transform 0.3s ease;
-}
-
-.blog-list-item:hover img {
-  transform: scale(1.05);
-}
-
-.blog-list-item .blog-overlay {
-  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-}
-
-.blog-list-item:hover .blog-overlay {
-  @apply opacity-100;
-}
-
-/* =====================================================
-   Form input styles
-   ===================================================== */
-Input:focus,
-Textarea:focus {
-  outline: none;
-}
-
-/* =====================================================
-   Preloader
-   ===================================================== */
-.preloader {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #111;
-}
-
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #333;
-  border-top-color: #ffb400;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
+  /* Glow hover buttons */
+  .btn-glow {
+    @apply relative overflow-hidden transition-all duration-300 border border-blue-500/30 hover:border-blue-500/80 shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] bg-blue-600/10 hover:bg-blue-600/20 active:scale-95;
+  }
+  
+  /* Text gradient active */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent;
   }
 }
 
-/* =====================================================
-   Home hero background
-   ===================================================== */
-.home-bg {
-  /* Updated to correct image path */
-  background-image: url("/assets/img/profile-image.png");
-  background-size: cover;
-  background-position: center;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
 }
