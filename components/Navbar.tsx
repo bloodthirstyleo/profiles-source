@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { useTunisContext } from "@/contexts/TunisContext";
+import WeatherWidget from "@/components/WeatherWidget";
 
 const NAV_ITEMS = [
   { key: "home", href: "/", icon: "fa-solid fa-house", stateName: "home" },
@@ -54,6 +55,7 @@ export default function Navbar() {
           <Link href="/" className="text-fs-18 font-bold mr-2 text-gradient select-none">
             {messages.nav.brand}
           </Link>
+          <WeatherWidget />
           {NAV_ITEMS.map((item) => {
             const isActive = pathname === item.href;
             return (
