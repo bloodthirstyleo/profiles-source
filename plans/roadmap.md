@@ -6,7 +6,7 @@ Tài liệu này phác thảo toàn bộ quy trình công việc và lộ trình
 
 ## 📅 Tổng quan Lộ trình thực hiện
 
-Lộ trình được chia làm **8 giai đoạn chính**:
+Lộ trình được chia làm **9 giai đoạn chính**:
 
 ```mermaid
 graph TD
@@ -16,6 +16,7 @@ graph TD
     Phase4 --> Phase5[Giai đoạn 5: Tích hợp Minigames]
     Phase5 --> Phase6[Giai đoạn 6: Sinh tài nguyên ảnh bằng AI]
     Phase6 --> Phase7[Giai đoạn 7: Hiệu ứng 3D Three.js]
+    Phase7 --> Phase8[Giai đoạn 8: Tích hợp Weather API]
 ```
 
 ### 1. Giai đoạn 1: Cập nhật dữ liệu & Thông tin CV
@@ -49,6 +50,10 @@ graph TD
 ### 8. Giai đoạn 8: Tích hợp hiệu ứng 3D tương tác bằng Three.js
 *   **Mục tiêu**: Lập trình và tích hợp các hiệu ứng 3D, nền hạt bụi tương tác phản hồi chuột, và các hình khối WebGL sinh động để tạo điểm nhấn hiện đại cho website.
 *   **Tệp kế hoạch chi tiết**: [plans/08-threejs-integration.md](file:///c:/CongViec/profiles-source/plans/08-threejs-integration.md)
+
+### 9. Giai đoạn 9: Tích hợp thông tin thời tiết thời gian thực từ Weather API
+*   **Mục tiêu**: Nhúng các widget thời tiết siêu nhỏ trên Navbar, hiển thị trạng thái và lời chúc lập trình viên theo thời tiết (Developer Mood Card) trong Bento grid và hiển thị thời tiết điểm đến du lịch Quy Nhơn/Gia Lai.
+*   **Tệp kế hoạch chi tiết**: [plans/09-weather-integration.md](file:///c:/CongViec/profiles-source/plans/09-weather-integration.md)
 
 ---
 
