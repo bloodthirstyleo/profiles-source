@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import { portfolioWorks } from "@/data/siteData";
+import { prefixAssetPath } from "@/lib/utils";
 
 const categories = ["All", ...Array.from(new Set(portfolioWorks.map((w) => w.category)))];
 
@@ -52,7 +53,7 @@ export default function PortfolioSection() {
               {/* Image Container */}
               <div className="relative rounded-xl overflow-hidden aspect-video mb-4 bg-zinc-900/50 border border-white/5">
                 <Image
-                  src={work.src}
+                  src={prefixAssetPath(work.src)}
                   alt={work.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

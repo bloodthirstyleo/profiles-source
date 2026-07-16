@@ -4,8 +4,7 @@ import { useState } from "react";
 import { useTunisContext } from "@/contexts/TunisContext";
 import SectionTitle from "@/components/SectionTitle";
 import { blogPosts } from "@/data/siteData";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { prefixAssetPath } from "@/lib/utils";
 
 /** Blog posts section with pagination-like grid display. */
 export default function BlogSection() {
@@ -30,7 +29,7 @@ export default function BlogSection() {
               <div key={post.id} className="w-1/2 down-sm:w-full px-3 sm:px-4 mb-6 sm:mb-8">
                 <div className="blog-list-item cursor-pointer rounded-5 group transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-skin-glow will-change-transform">
                   <img
-                    src={`${basePath}${post.img}`}
+                    src={prefixAssetPath(post.img)}
                     alt={post.title}
                     className="w-full h-auto rounded-5"
                   />

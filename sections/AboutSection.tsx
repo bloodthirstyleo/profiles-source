@@ -11,8 +11,7 @@ import {
   education,
   references,
 } from "@/data/siteData";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { prefixAssetPath } from "@/lib/utils";
 
 export default function AboutSection() {
   return (
@@ -31,7 +30,7 @@ export default function AboutSection() {
               </h3>
               <div className="hidden xs:block relative rounded-full border-4 border-solid border-zinc-800 w-[230px] h-[230px] mb-6 mx-auto overflow-hidden">
                 <Image
-                  src="/assets/img/profile-image-mobile.png"
+                  src={prefixAssetPath("/assets/img/profile-image-mobile.png")}
                   alt="Profile mobile"
                   fill
                   sizes="230px"
@@ -51,7 +50,7 @@ export default function AboutSection() {
             <div className="mt-8 flex justify-center sm:justify-start">
               <a
                 className="btn-glow group inline-flex w-full max-w-xs sm:w-auto items-center justify-center gap-3 px-6 py-3 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
-                href={`${basePath}/assets/cv/cv-dev.pdf`}
+                href={prefixAssetPath("/assets/cv/cv-dev.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
               >

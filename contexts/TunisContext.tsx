@@ -7,7 +7,7 @@ import React, {
   useCallback,
   ReactNode,
 } from "react";
-import type { BlogPost } from "@/data/siteData";
+import type { BlogPost } from "@/lib/types";
 
 /* ------------------------------------------------------------------
  * Action Types

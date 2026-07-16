@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import portfolio from "@/data/portfolio.json";
+import { prefixAssetPath } from "@/lib/utils";
 
 export default function HeroSection() {
   const { name, role, intro, photo } = portfolio.home;
@@ -23,7 +24,7 @@ export default function HeroSection() {
             <div className="relative w-64 h-64 md:w-80 md:h-[420px] rounded-2xl overflow-hidden glass-panel border border-white/20">
               <Image
                 className="transition-transform duration-500 group-hover:scale-105 object-cover"
-                src={photo || "/assets/img/profile-image.png"}
+                src={prefixAssetPath(photo || "/assets/img/profile-image.png")}
                 alt={name}
                 fill
                 priority

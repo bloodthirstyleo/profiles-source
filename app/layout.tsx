@@ -4,6 +4,7 @@ import "./globals.css";
 import { TunisProvider } from "@/contexts/TunisContext";
 import metadataJson from "@/data/metadata.json";
 import Navbar from "@/components/Navbar";
+import { prefixAssetPath } from "@/lib/utils";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,9 +18,18 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 });
 
-export const metadata: Metadata = metadataJson;
+function getMetadataBase(): URL {
+  try {
+    return new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000");
+  } catch {
+    return new URL("http://localhost:3000");
+  }
+}
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+export const metadata: Metadata = {
+  metadataBase: getMetadataBase(),
+  ...metadataJson,
+};
 
 export default function RootLayout({
   children,
@@ -33,7 +43,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${openSans.variable} overflow-x-hidden min-h-screen`}
       >
         <head>
-          <link rel="stylesheet" href={`${basePath}/assets/css/skins/blue.css`} />
+          <link rel="stylesheet" href={prefixAssetPath("/assets/css/skins/blue.css")} />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
