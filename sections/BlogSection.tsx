@@ -5,6 +5,8 @@ import { useTunisContext } from "@/contexts/TunisContext";
 import SectionTitle from "@/components/SectionTitle";
 import { blogPosts } from "@/data/siteData";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 /** Blog posts section with pagination-like grid display. */
 export default function BlogSection() {
   const { dark } = useTunisContext();
@@ -28,7 +30,7 @@ export default function BlogSection() {
               <div key={post.id} className="w-1/2 down-sm:w-full px-4 mb-8">
                 <div className="blog-list-item cursor-pointer rounded-5 group">
                   <img
-                    src={post.img}
+                    src={`${basePath}${post.img}`}
                     alt={post.title}
                     className="w-full h-auto rounded-5"
                   />

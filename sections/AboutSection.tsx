@@ -11,6 +11,8 @@ import {
   education,
 } from "@/data/siteData";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function AboutSection() {
   return (
     <section id="about" className="relative w-full pt-28 pb-20 px-4 md:px-8">
@@ -48,7 +50,7 @@ export default function AboutSection() {
             <div className="mt-8">
               <a
                 className="btn-glow group inline-flex items-center gap-3 px-6 py-3 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
-                href="/assets/cv/cv-dev.pdf"
+                href={`${basePath}/assets/cv/cv-dev.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

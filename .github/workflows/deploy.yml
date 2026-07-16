@@ -1,0 +1,53 @@
+# Workflow tự động build và deploy dự án Next.js static export lên GitHub Pages
+name: Deploy Next.js to GitHub Pages
+
+on:
+  push:
+    branches: ["develop", "master"] # Kích hoạt khi có commit đẩy lên develop hoặc master
+
+  # Cho phép kích hoạt thủ công từ tab Actions trên GitHub
+  workflow_dispatch:
+
+# Quyền hạn cần thiết để đẩy lên GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tránh việc chạy song song gây xung đột deploy
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout mã nguồn
+        uses: actions/checkout@v4
+
+      - name: Cài đặt Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Cài đặt dependencies
+        run: npm ci
+
+      - name: Biên dịch ứng dụng (Build Next.js)
+        run: npm run build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /profiles-source
+
+      - name: Tải tài nguyên static lên
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./out
+
+      - name: Triển khai lên GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
