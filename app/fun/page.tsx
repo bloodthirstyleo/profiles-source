@@ -4,6 +4,7 @@ import entertainment from "@/data/entertainment.json";
 import JokeCard from "./components/JokeCard";
 import MovieGrid from "./components/MovieGrid";
 import QuizWidget from "./components/QuizWidget";
+import { prefixAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Fun - Vo Manh Khanh | Entertainment Hub",
@@ -24,7 +25,7 @@ export default function FunPage() {
           </p>
         </section>
 
-        <section className="mb-8 glass-panel rounded-2xl p-5 sm:p-6 flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+        <section className="mb-8 glass-panel rounded-2xl p-5 sm:p-6 grid gap-5 md:grid-cols-[1fr_220px_auto] md:items-center">
           <div>
             <p className="text-fs-13 uppercase tracking-[0.22em] text-blue-300 font-bold">Mini arcade</p>
             <h2 className="mt-2 text-fs-26 font-black text-zinc-100">Snake and Tetris are ready.</h2>
@@ -32,6 +33,7 @@ export default function FunPage() {
               Play keyboard-first classics with mobile D-pad controls and a glass board style that matches the site skin.
             </p>
           </div>
+          <img src={prefixAssetPath("/assets/img/games/movie-sports.jpg")} alt="" className="h-32 w-full rounded-xl object-cover md:h-28" />
           <Link
             href="/fun/games"
             className="btn-glow inline-flex shrink-0 items-center justify-center gap-3 rounded-full px-5 py-3 text-fs-13 font-bold uppercase tracking-wider text-blue-100"

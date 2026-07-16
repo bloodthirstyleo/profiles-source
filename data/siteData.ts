@@ -56,14 +56,14 @@ export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
   })
 );
 
-/* Blog posts (static, images mapped to existing assets) */
+/* Blog posts (static, images mapped to generated assets) */
 export const blogPosts: BlogPost[] = [
-  { id: 1, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Own Your Audience by Creating an Email List", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 2, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Top 10 Toolkits for Deep Learning in 2020", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 3, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Everything You Need to Know About Web Accessibility", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 4, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Inject Humor & Comedy Into Your Brand", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 5, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Women in Web Design: How To Achieve Success", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 6, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Evergreen versus topical content: An overview", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 1, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Own Your Audience by Creating an Email List", img: "/assets/img/blog/email-list.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 2, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Top 10 Toolkits for Deep Learning in 2020", img: "/assets/img/blog/deep-learning-toolkits.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 3, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Everything You Need to Know About Web Accessibility", img: "/assets/img/blog/web-accessibility.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 4, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Inject Humor & Comedy Into Your Brand", img: "/assets/img/blog/humor-brand.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 5, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Women in Web Design: How To Achieve Success", img: "/assets/img/blog/women-web-design.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 6, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Evergreen versus topical content: An overview", img: "/assets/img/blog/evergreen-content.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
 ];
 
 /* Footer / contact */

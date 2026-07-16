@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
+import { homeData } from "@/data/siteData";
 import {
   personalInfo,
   stats,
@@ -34,7 +35,7 @@ export default function AboutSection() {
               </h3>
               <div className="hidden xs:block relative rounded-full border-4 border-solid border-zinc-800 w-[230px] h-[230px] mb-6 mx-auto overflow-hidden">
                 <Image
-                  src={prefixAssetPath("/assets/img/profile-image-mobile.png")}
+                  src={prefixAssetPath(homeData.photoMobile || "/assets/img/profile-image-mobile.png")}
                   alt="Profile mobile"
                   fill
                   sizes="230px"

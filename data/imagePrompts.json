@@ -1,0 +1,125 @@
+{
+  "style": "Premium abstract tech 3D / glassmorphism illustration, dark mode background, neon accents, isometric composition, clean paths, high resolution, no watermark.",
+  "assets": [
+    {
+      "category": "project",
+      "slug": "ai-travel-assistant",
+      "path": "/assets/img/projects/ai-travel-assistant.jpg",
+      "prompt": "Premium 3D illustration of an AI chatbot floating above a Quy Nhon and Gia Lai travel map, neon yellow and blue route lines, glassmorphic itinerary cards, isometric view, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "mamas-pizza",
+      "path": "/assets/img/projects/mamas-pizza.jpg",
+      "prompt": "Premium 3D claymorphism pizza box beside a modern mobile ordering interface and restaurant admin dashboard, warm red and orange accents, dark glass background, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "thich-tour-management",
+      "path": "/assets/img/projects/thich-tour-management.jpg",
+      "prompt": "Premium 3D tour management dashboard with revenue charts, booking grid, flight schedule elements, green and cyan neon accents, isometric glass UI, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "vidata-zalo-mini-app",
+      "path": "/assets/img/projects/vidata-zalo-mini-app.jpg",
+      "prompt": "Premium 3D phone mockup showing a fresh agricultural e-commerce Zalo Mini App, clean produce cards, bright green and amber accents, glassmorphism, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "english-center-lms",
+      "path": "/assets/img/projects/english-center-lms.jpg",
+      "prompt": "Premium 3D online learning scene with books, graduation cap, video class interface, purple and cyan glow, dark glassmorphic dashboard, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "thich-tour-booking",
+      "path": "/assets/img/projects/thich-tour-booking.jpg",
+      "prompt": "Premium 3D travel booking web interface with beach image cards, suitcase object, calendar checkout flow, cyan and amber neon, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "houzi-real-estate",
+      "path": "/assets/img/projects/houzi-real-estate.jpg",
+      "prompt": "Premium 3D real estate discovery scene with house model on phone and tablet screens, teal and blue lighting, glass UI cards, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "bahnar-dictionary",
+      "path": "/assets/img/projects/bahnar-dictionary.jpg",
+      "prompt": "Premium 3D glowing open dictionary with ancient language symbols, audio waveform translation icon, purple and pink neon accents, 16:9."
+    },
+    {
+      "category": "project",
+      "slug": "kindergarten-management",
+      "path": "/assets/img/projects/kindergarten-management.jpg",
+      "prompt": "Premium 3D kindergarten management dashboard with playful blocks, finance charts, parent communication cards, coral and yellow accents, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "email-list",
+      "path": "/assets/img/blog/email-list.jpg",
+      "prompt": "Premium 3D blog cover of a glowing inbox and audience growth nodes, blue and green neon accents, glassmorphism, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "deep-learning-toolkits",
+      "path": "/assets/img/blog/deep-learning-toolkits.jpg",
+      "prompt": "Premium 3D blog cover of an AI neural network graph with toolkit modules, purple and cyan glow, dark glass background, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "web-accessibility",
+      "path": "/assets/img/blog/web-accessibility.jpg",
+      "prompt": "Premium 3D blog cover of a global accessibility icon with inclusive UI controls, blue and yellow accents, glassmorphism, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "humor-brand",
+      "path": "/assets/img/blog/humor-brand.jpg",
+      "prompt": "Premium 3D blog cover for brand humor and comedy, playful content sparks, orange and pink neon accents, clean dark background, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "women-web-design",
+      "path": "/assets/img/blog/women-web-design.jpg",
+      "prompt": "Premium 3D blog cover for women in web design, creative workspace and interface components, pink and blue neon, glassmorphism, 16:9."
+    },
+    {
+      "category": "blog",
+      "slug": "evergreen-content",
+      "path": "/assets/img/blog/evergreen-content.jpg",
+      "prompt": "Premium 3D blog cover of evergreen content growth, content tree and long-term traffic cards, green neon accents, 16:9."
+    },
+    {
+      "category": "avatar",
+      "slug": "desktop",
+      "path": "/assets/img/profile-image.png",
+      "prompt": "Professional male full stack developer portrait, modern angled pose, dark tech neon background, blue and violet glass highlights, square avatar."
+    },
+    {
+      "category": "avatar",
+      "slug": "mobile",
+      "path": "/assets/img/profile-image-mobile.png",
+      "prompt": "Professional male developer portrait optimized for mobile about section, clean crop, blue and green neon tech background, square avatar."
+    },
+    {
+      "category": "game",
+      "slug": "snake-game",
+      "path": "/assets/img/games/snake-game.jpg",
+      "prompt": "Premium 3D retro neon snake game scene on a glowing grid, sharp green and cyan accents, dark arcade glass style, 16:9."
+    },
+    {
+      "category": "game",
+      "slug": "tetris-game",
+      "path": "/assets/img/games/tetris-game.jpg",
+      "prompt": "Premium 3D glowing Tetris blocks arranged above a dark arcade board, amber and purple neon, glassmorphic render, 16:9."
+    },
+    {
+      "category": "game",
+      "slug": "movie-sports",
+      "path": "/assets/img/games/movie-sports.jpg",
+      "prompt": "Premium 3D entertainment cover with cinema reel and boxing energy elements, red and blue neon accents, dark glass style, 16:9."
+    }
+  ]
+}

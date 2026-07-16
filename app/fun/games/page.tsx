@@ -1,14 +1,15 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import SnakeGame from "@/components/games/SnakeGame";
 import TetrisGame from "@/components/games/TetrisGame";
+import { prefixAssetPath } from "@/lib/utils";
 
 type Game = "snake" | "tetris";
 
-const games: Array<{ id: Game; title: string; copy: string; icon: string }> = [
-  { id: "snake", title: "Snake", copy: "Fast grid chase with saved high score and keyboard or touch controls.", icon: "fa-worm" },
-  { id: "tetris", title: "Tetris", copy: "Glass blocks, rotate on Space or Up, clear-line sound, mobile controls.", icon: "fa-cubes" },
+const games: Array<{ id: Game; title: string; copy: string; icon: string; image: string }> = [
+  { id: "snake", title: "Snake", copy: "Fast grid chase with saved high score and keyboard or touch controls.", icon: "fa-worm", image: "/assets/img/games/snake-game.jpg" },
+  { id: "tetris", title: "Tetris", copy: "Glass blocks, rotate on Space or Up, clear-line sound, mobile controls.", icon: "fa-cubes", image: "/assets/img/games/tetris-game.jpg" },
 ];
 
 export default function GamesPage() {
@@ -30,8 +31,10 @@ export default function GamesPage() {
               key={game.id}
               type="button"
               onClick={() => setActiveGame(game.id)}
-              className="glass-panel glass-panel-hover rounded-2xl p-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-400/70"
+              className="glass-panel glass-panel-hover rounded-2xl p-0 text-left focus:outline-none focus:ring-2 focus:ring-blue-400/70"
             >
+              <img src={prefixAssetPath(game.image)} alt="" className="h-44 w-full rounded-t-2xl object-cover" />
+              <div className="p-6">
               <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-400/25 bg-blue-500/15 text-fs-26 text-blue-200 shadow-skin-card">
                 <i className={`fa-solid ${game.icon}`} />
               </span>
@@ -40,6 +43,7 @@ export default function GamesPage() {
               <span className="mt-6 inline-flex items-center gap-2 rounded-full border border-blue-400/30 px-5 py-3 text-fs-13 font-bold uppercase tracking-widest text-blue-200">
                 Play <i className="fa-solid fa-arrow-right" />
               </span>
+              </div>
             </button>
           ))}
         </div>
