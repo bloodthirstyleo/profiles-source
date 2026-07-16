@@ -9,6 +9,7 @@ const NAV_ITEMS = [
   { key: "home", href: "/", icon: "fa-solid fa-house", stateName: "home" },
   { key: "about", href: "/about", icon: "fa-solid fa-user", stateName: "about" },
   { key: "portfolio", href: "/portfolio", icon: "fa-solid fa-briefcase", stateName: "portfolio" },
+  { key: "fun", href: "/fun", icon: "fa-solid fa-gamepad", stateName: "fun" },
   { key: "contact", href: "/contact", icon: "fa-solid fa-envelope", stateName: "contact" },
 ] as const;
 

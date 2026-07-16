@@ -2,7 +2,7 @@ export type Locale = "en" | "vi";
 
 export const messagesByLocale = {
   en: {
-    nav: { brand: "Portfolio.", home: "Home", about: "About", portfolio: "Portfolio", contact: "Contact" },
+    nav: { brand: "Portfolio.", home: "Home", about: "About", portfolio: "Portfolio", fun: "Fun", contact: "Contact" },
     common: { language: "Language", theme: "Theme", dark: "Dark", light: "Light", close: "Close", visitSite: "Visit Site" },
     actions: {
       themeLight: "Light mode",
@@ -45,7 +45,7 @@ export const messagesByLocale = {
     },
   },
   vi: {
-    nav: { brand: "Ho so.", home: "Trang chu", about: "Gioi thieu", portfolio: "Du an", contact: "Lien he" },
+    nav: { brand: "Ho so.", home: "Trang chu", about: "Gioi thieu", portfolio: "Du an", fun: "Giai tri", contact: "Lien he" },
     common: { language: "Ngon ngu", theme: "Giao dien", dark: "Toi", light: "Sang", close: "Dong", visitSite: "Mo website" },
     actions: {
       themeLight: "Giao dien sang",

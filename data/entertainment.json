@@ -1,0 +1,131 @@
+{
+  "jokes": [
+    {
+      "id": "deploy-friday",
+      "rating": 4.8,
+      "text": {
+        "en": "I do not deploy on Friday. I release suspense into production.",
+        "vi": "Toi khong deploy thu Sau. Toi dua hoi hop len production."
+      },
+      "author": { "en": "Release folklore", "vi": "Truyen mieng release" }
+    },
+    {
+      "id": "coffee-cache",
+      "rating": 4.6,
+      "text": {
+        "en": "My coffee has better cache invalidation than my app.",
+        "vi": "Ly ca phe cua toi invalidate cache con tot hon app cua toi."
+      },
+      "author": { "en": "Night deploy club", "vi": "Hoi deploy dem" }
+    },
+    {
+      "id": "bug-feature",
+      "rating": 4.7,
+      "text": {
+        "en": "The bug became a feature after the demo went well.",
+        "vi": "Bug thanh tinh nang sau khi demo chay ngon."
+      },
+      "author": { "en": "Sprint board", "vi": "Bang sprint" }
+    },
+    {
+      "id": "standup",
+      "rating": 4.5,
+      "text": {
+        "en": "Daily standup: where yesterday becomes today with witnesses.",
+        "vi": "Daily standup: noi hom qua tro thanh hom nay truoc nhan chung."
+      },
+      "author": { "en": "Office folklore", "vi": "Truyen van phong" }
+    },
+    {
+      "id": "semicolon",
+      "rating": 4.3,
+      "text": {
+        "en": "I added one semicolon and called it technical debt repayment.",
+        "vi": "Toi them mot dau cham phay va goi do la tra no ky thuat."
+      },
+      "author": { "en": "Tiny PR", "vi": "PR sieu nho" }
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "world-cup-2022",
+      "question": { "en": "Which country won the 2022 FIFA World Cup?", "vi": "Quoc gia nao vo dich FIFA World Cup 2022?" },
+      "options": ["Argentina", "France", "Brazil", "Croatia"],
+      "answerIndex": 0
+    },
+    {
+      "id": "nba-three",
+      "question": { "en": "How many points is an NBA shot worth from behind the arc?", "vi": "Cu nem sau vach 3 diem NBA duoc tinh may diem?" },
+      "options": ["1", "2", "3", "4"],
+      "answerIndex": 2
+    },
+    {
+      "id": "wimbledon",
+      "question": { "en": "Which surface is used at Wimbledon?", "vi": "Wimbledon thi dau tren mat san nao?" },
+      "options": ["Grass", "Clay", "Hard court", "Carpet"],
+      "answerIndex": 0
+    },
+    {
+      "id": "f1-finish",
+      "question": { "en": "What flag signals the end of a Formula 1 race?", "vi": "Co nao bao hieu ket thuc chang dua Formula 1?" },
+      "options": ["Blue flag", "Yellow flag", "Checkered flag", "Red flag"],
+      "answerIndex": 2
+    },
+    {
+      "id": "olympic-rings",
+      "question": { "en": "How many rings are on the Olympic flag?", "vi": "Co Olympic co bao nhieu vong tron?" },
+      "options": ["4", "5", "6", "7"],
+      "answerIndex": 1
+    }
+  ],
+  "movies": [
+    {
+      "id": "the-nice-guys",
+      "mood": "laugh",
+      "rating": 4.7,
+      "funScore": 9,
+      "title": { "en": "The Nice Guys", "vi": "Nhung Chang Trai Tot" },
+      "tagline": { "en": "Buddy chaos with detective swagger.", "vi": "Cap bai trung dieu tra day hon loan." }
+    },
+    {
+      "id": "paddington-2",
+      "mood": "comfort",
+      "rating": 4.9,
+      "funScore": 10,
+      "title": { "en": "Paddington 2", "vi": "Gau Paddington 2" },
+      "tagline": { "en": "Warm, polite, criminally charming.", "vi": "Am ap, lich su, dang yeu bat hop phap." }
+    },
+    {
+      "id": "game-night",
+      "mood": "party",
+      "rating": 4.5,
+      "funScore": 8,
+      "title": { "en": "Game Night", "vi": "Dem Choi Nho Doi" },
+      "tagline": { "en": "A party plan that files a bug report.", "vi": "Ke hoach tiec tung tu sinh bug." }
+    },
+    {
+      "id": "school-of-rock",
+      "mood": "hype",
+      "rating": 4.6,
+      "funScore": 9,
+      "title": { "en": "School of Rock", "vi": "Truong Hoc Rock" },
+      "tagline": { "en": "Maximum volume, minimum lesson plan.", "vi": "Am luong toi da, giao an toi thieu." }
+    },
+    {
+      "id": "hot-fuzz",
+      "mood": "laugh",
+      "rating": 4.8,
+      "funScore": 9,
+      "title": { "en": "Hot Fuzz", "vi": "Sieu Canh Sat" },
+      "tagline": { "en": "Tiny town, enormous punchlines.", "vi": "Thi tran nho, cu punchline cuc lon." }
+    },
+    {
+      "id": "chef",
+      "mood": "comfort",
+      "rating": 4.4,
+      "funScore": 8,
+      "title": { "en": "Chef", "vi": "Dau Bep" },
+      "tagline": { "en": "Road food and good mood refills.", "vi": "Do an duong pho va tam trang day lai." }
+    }
+  ]
+}
