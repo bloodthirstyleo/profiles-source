@@ -15,6 +15,7 @@
   --surface:      rgba(11, 22, 50, 0.70);
   --surface-2:    rgba(18, 34, 76, 0.48);
   --border-glow:  rgba(0, 170, 255, 0.25);
+  --skin-shadow-color: rgba(0, 170, 255, 0.45);
   --glow-teal:    0 0 20px rgba(0, 170, 255, 0.45);
   --glow-teal-sm: 0 0 10px rgba(0, 170, 255, 0.35);
   --glow-strong:  0 0 36px rgba(0, 170, 255, 0.60);

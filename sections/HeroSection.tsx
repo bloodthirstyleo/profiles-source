@@ -10,7 +10,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 md:px-8"
+      className="relative min-h-screen flex items-center justify-center pt-20 pb-14 px-4 sm:px-6 md:px-8"
     >
       <div className="max-w-6xl w-full mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
         {/* Profile Image Column */}
@@ -50,7 +50,7 @@ export default function HeroSection() {
 
           <Link
             href="/about"
-            className="btn-glow group inline-flex items-center gap-3 px-8 py-4 rounded-full text-fs-14 font-bold uppercase tracking-wider text-white transition-all"
+            className="btn-glow group inline-flex w-full max-w-xs sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-4 rounded-full text-fs-14 font-bold uppercase tracking-wider text-white transition-all"
           >
             More About Me
             <i className="fa-solid fa-arrow-right transition-transform duration-300 group-hover:translate-x-1" />

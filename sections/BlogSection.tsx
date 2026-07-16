@@ -20,15 +20,15 @@ export default function BlogSection() {
   );
 
   return (
-    <section id="blog" className="relative w-full">
+    <section id="blog" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
       <div className="w-full">
         <SectionTitle bigTitle="posts" colorTitle="blog" normalTitle="my" />
 
         <div className="xl:max-w-1140 custom-md-3:max-w-[calc(100%-195px)] lg:max-w-960 md:max-w-720 sm:max-w-540 xs:max-w-full mx-auto">
-          <div className="flex flex-wrap -mx-4">
+          <div className="flex flex-wrap -mx-3 sm:-mx-4">
             {paginated.map((post) => (
-              <div key={post.id} className="w-1/2 down-sm:w-full px-4 mb-8">
-                <div className="blog-list-item cursor-pointer rounded-5 group">
+              <div key={post.id} className="w-1/2 down-sm:w-full px-3 sm:px-4 mb-6 sm:mb-8">
+                <div className="blog-list-item cursor-pointer rounded-5 group transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-skin-glow will-change-transform">
                   <img
                     src={`${basePath}${post.img}`}
                     alt={post.title}

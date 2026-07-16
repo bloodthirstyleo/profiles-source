@@ -14,7 +14,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative w-full pt-28 pb-20 px-4 md:px-8">
+    <section id="contact" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle="contact" colorTitle="me" normalTitle="get in" />
 
@@ -144,7 +144,7 @@ export default function ContactSection() {
               <div className="flex items-center justify-between flex-wrap gap-4 pt-2">
                 <button
                   type="submit"
-                  className="btn-glow group inline-flex items-center gap-3 px-8 py-4 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
+                  className="btn-glow group inline-flex w-full max-w-xs sm:w-auto items-center justify-center gap-3 px-6 sm:px-8 py-4 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
                 >
                   Send Message
                   <i className="fa-solid fa-paper-plane transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

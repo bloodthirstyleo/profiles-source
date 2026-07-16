@@ -45,8 +45,8 @@ export default function RootLayout({
         <body className="font-Poppins text-fs-16 font-medium leading-lh-1.6 text-zinc-100 bg-[#08080a]">
           {/* Aurora background dynamic lights */}
           <div className="fixed inset-0 -z-50 overflow-hidden bg-[#070709] pointer-events-none select-none">
-            <div className="absolute top-[-20%] left-[-20%] w-[60%] h-[60%] rounded-full bg-blue-600/10 blur-[130px] animate-aurora-slow" />
-            <div className="absolute bottom-[-20%] right-[-20%] w-[60%] h-[60%] rounded-full bg-indigo-600/10 blur-[130px] animate-aurora-medium" />
+            <div className="absolute top-[-20%] left-[-20%] w-[70%] h-[70%] rounded-full bg-blue-600/10 blur-5xl animate-aurora-slow" />
+            <div className="absolute bottom-[-20%] right-[-20%] w-[70%] h-[70%] rounded-full bg-indigo-600/10 blur-5xl animate-aurora-medium" />
           </div>
 
           <Navbar />

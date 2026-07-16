@@ -16,14 +16,14 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative w-full pt-28 pb-20 px-4 md:px-8">
+    <section id="about" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle="resume" colorTitle="me" normalTitle="about" />
 
         {/* Bento Row 1: Personal Info & Stats */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           {/* Personal Info Box */}
-          <div className="col-span-1 lg:col-span-6 glass-panel p-8 rounded-2xl flex flex-col justify-between">
+          <div className="col-span-1 lg:col-span-6 glass-panel p-5 sm:p-8 rounded-2xl flex flex-col justify-between">
             <div>
               <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-6 text-zinc-100 flex items-center gap-3">
                 <i className="fa-solid fa-address-card text-blue-400" />
@@ -48,9 +48,9 @@ export default function AboutSection() {
               </div>
             </div>
             
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center sm:justify-start">
               <a
-                className="btn-glow group inline-flex items-center gap-3 px-6 py-3 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
+                className="btn-glow group inline-flex w-full max-w-xs sm:w-auto items-center justify-center gap-3 px-6 py-3 rounded-full text-fs-13 font-bold uppercase tracking-wider text-white transition-all"
                 href={`${basePath}/assets/cv/cv-dev.pdf`}
                 target="_blank"
                 rel="noopener noreferrer"
