@@ -19,7 +19,8 @@ export interface ExperienceItem {
 export interface EducationItem { id: number; date: string; title: string; unv: string; desc: string; }
 export interface SkillItem { id: number; name: string; value: string; }
 export interface BlogPost { id: number; author: string; date: string; tags: string; title: string; img: string; desc: string; }
-export interface PortfolioWork { id: number; src: string; category: string; title: string; link?: string; }
+export interface PortfolioWork { id: number; src: string; category: string; title: string; link?: string; project?: string; client?: string; role?: string; date?: string; description?: string; langages?: string; }
+export interface ReferenceInfo { name: string; role: string; email: string; phone: string; }
 export interface HomeData { name: string; role: string; photo: string; photoMobile: string; }
 
 /* ─── Home data ─── */
@@ -37,6 +38,7 @@ export const techStack: TechStackItem[] = data.techStack || [];
 export const experience: ExperienceItem[] = data.experience || [];
 export const education: EducationItem[] = data.education || [];
 export const skills: SkillItem[] = data.skills || [];
+export const references: ReferenceInfo[] = data.references || [];
 
 /* ─── Portfolio works ─── */
 export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
@@ -46,6 +48,12 @@ export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
     category: item.type || "Project",
     title: item.title,
     link: item.previewLink || undefined,
+    project: item.project,
+    client: item.client,
+    role: item.role,
+    date: item.date,
+    description: item.description,
+    langages: item.langages,
   })
 );
 

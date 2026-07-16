@@ -77,11 +77,21 @@ export default function PortfolioSection() {
               {/* Text Information */}
               <div className="px-1">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400 block mb-1">
-                  {work.category}
+                  {[work.category, work.date].filter(Boolean).join(" / ")}
                 </span>
                 <h5 className="text-fs-16 font-bold text-zinc-100 group-hover:text-blue-400 transition-colors duration-300">
                   {work.title}
                 </h5>
+                {work.role && (
+                  <p className="mt-2 text-fs-12 font-semibold text-zinc-400 font-Open-sans">
+                    {work.role}
+                  </p>
+                )}
+                {work.langages && (
+                  <p className="mt-2 text-fs-12 text-zinc-500 font-Open-sans leading-relaxed line-clamp-2">
+                    {work.langages}
+                  </p>
+                )}
               </div>
             </div>
           ))}

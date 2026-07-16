@@ -9,6 +9,7 @@ import {
   skills,
   experience,
   education,
+  references,
 } from "@/data/siteData";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -79,6 +80,56 @@ export default function AboutSection() {
             ))}
           </div>
         </div>
+
+        {references.length > 0 && (
+          <div className="mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {references.map((reference) => (
+                <div
+                  key={reference.email}
+                  className="glass-panel glass-panel-hover p-6 rounded-2xl border border-blue-400/20 bg-blue-500/[0.03]"
+                >
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-blue-400 block mb-2">
+                        References
+                      </span>
+                      <h3 className="text-fs-21 font-bold text-zinc-100">
+                        Nguoi gioi thieu
+                      </h3>
+                      <p className="mt-1 text-fs-14 font-bold text-zinc-100">
+                        {reference.name}
+                      </p>
+                      <p className="text-fs-13 font-semibold text-zinc-400 font-Open-sans mt-1">
+                        {reference.role}
+                      </p>
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-blue-500/10 border border-blue-400/20 flex items-center justify-center text-blue-300 shrink-0">
+                      <i className="fa-solid fa-user-check text-fs-18" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-Open-sans text-fs-13">
+                    <a
+                      href={"mailto:" + reference.email}
+                      className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-zinc-300 hover:text-blue-300 transition-colors"
+                    >
+                      <i className="fa-solid fa-envelope text-blue-400" />
+                      <span className="break-all">{reference.email}</span>
+                    </a>
+                    <a
+                      href={"tel:" + reference.phone}
+                      className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-zinc-300 hover:text-blue-300 transition-colors"
+                    >
+                      <i className="fa-solid fa-phone text-blue-400" />
+                      <span>{reference.phone}</span>
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Bento Row 2: Tech Stack Category */}
         <div className="mb-16">
