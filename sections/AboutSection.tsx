@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
 import { homeData } from "@/data/siteData";
 import {
@@ -14,10 +14,8 @@ import {
   references,
 } from "@/data/siteData";
 import { prefixAssetPath } from "@/lib/utils";
-import { formatWeatherTime, getCachedWeather, type WeatherData } from "@/lib/weather";import { useTunisContext } from "@/contexts/TunisContext";
 import { formatWeatherTime, getCachedWeather, type WeatherData } from "@/lib/weather";
-
-
+import { useTunisContext } from "@/contexts/TunisContext";
 
 function WeatherBentoCard() {
   const [weather, setWeather] = useState<WeatherData | null>(null);
@@ -77,7 +75,7 @@ function WeatherBentoCard() {
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3">
           <span className="block text-[11px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Temp</span>
-          <span className="text-fs-16 font-bold text-blue-300">{weather ? `${weather.temperature}Â°C` : "--"}</span>
+          <span className="text-fs-16 font-bold text-blue-300">{weather ? <>{weather.temperature}&deg;C</> : "--"}</span>
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3">
           <span className="block text-[11px] uppercase tracking-widest text-zinc-500 font-bold mb-1">Humidity</span>
@@ -92,7 +90,7 @@ function WeatherBentoCard() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 font-Open-sans text-fs-13">
         <div className="rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-zinc-300">
           <span className="font-semibold text-zinc-500">Feels like: </span>
-          {weather ? `${weather.apparentTemperature}Â°C` : "--"}
+          {weather ? <>{weather.apparentTemperature}&deg;C</> : "--"}
         </div>
         <div className="rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3 text-zinc-300">
           <span className="font-semibold text-zinc-500">Sunrise: </span>
@@ -110,26 +108,11 @@ function WeatherBentoCard() {
     </div>
   );
 }
+
 export default function AboutSection() {
   const { t } = useTunisContext();
   const about = t.about;
-  const [weather, setWeather] = useState<WeatherData | null>(null);
 
-  useEffect(() => {
-    let mounted = true;
-
-    getCachedWeather("hoChiMinh")
-      .then((data) => {
-        if (mounted) setWeather(data);
-      })
-      .catch(() => {
-        if (mounted) setWeather(null);
-      });
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
   return (
     <section id="about" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl w-full mx-auto">
@@ -178,57 +161,6 @@ export default function AboutSection() {
 
           {/* Stats Grid Box */}
           <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="glass-panel glass-panel-hover p-6 rounded-2xl flex flex-col justify-between border border-blue-400/20 bg-blue-500/[0.03] sm:col-span-2">
-              <div className="flex items-start justify-between gap-4 mb-5">
-                <div>
-                  <span className="text-fs-12 font-bold text-blue-400 uppercase tracking-widest block mb-2">
-                    Saigon Weather
-                  </span>
-                  <div className="flex items-center gap-3">
-                    <span className="text-fs-40 leading-none" aria-hidden>
-                      {weather?.icon ?? "🌡️"}
-                    </span>
-                    <div>
-                      <p className="text-fs-32 font-extrabold text-zinc-100 leading-none">
-                        {weather ? `${weather.temperature}°C` : "--°C"}
-                      </p>
-                      <p className="text-fs-13 font-semibold text-zinc-400 font-Open-sans mt-1">
-                        {weather ? `${weather.label} / ${weather.labelVi}` : "Loading live weather"}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {weather && (
-                  <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-zinc-400">
-                    {weather.isDay ? "Day" : "Night"}
-                  </span>
-                )}
-              </div>
-
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 font-Open-sans">
-                <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
-                  <span className="text-[11px] uppercase tracking-widest text-zinc-500 font-bold">Humidity</span>
-                  <p className="text-fs-18 font-bold text-zinc-100 mt-1">{weather ? `${weather.humidity}%` : "--"}</p>
-                </div>
-                <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
-                  <span className="text-[11px] uppercase tracking-widest text-zinc-500 font-bold">Wind</span>
-                  <p className="text-fs-18 font-bold text-zinc-100 mt-1">{weather ? `${weather.windSpeed} km/h` : "--"}</p>
-                </div>
-                <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
-                  <span className="text-[11px] uppercase tracking-widest text-zinc-500 font-bold">Feels</span>
-                  <p className="text-fs-18 font-bold text-zinc-100 mt-1">{weather ? `${weather.apparentTemperature}°C` : "--"}</p>
-                </div>
-                <div className="rounded-xl border border-white/5 bg-white/[0.03] p-3">
-                  <span className="text-[11px] uppercase tracking-widest text-zinc-500 font-bold">Updated</span>
-                  <p className="text-fs-18 font-bold text-zinc-100 mt-1">{weather ? formatWeatherTime(weather.time) : "--"}</p>
-                </div>
-              </div>
-
-              <p className="font-Open-sans text-fs-14 leading-relaxed text-zinc-300 border-t border-white/5 pt-4">
-                <span className="font-bold text-blue-300">Developer Mood:</span>{" "}
-                {weather?.mood ?? "Checking weather before picking commit tempo."}
-              </p>
-            </div>
             {stats.map((item) => (
               <div
                 key={item.id}

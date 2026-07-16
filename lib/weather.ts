@@ -82,15 +82,15 @@ export const WEATHER_LOCATIONS: Record<WeatherLocationKey, WeatherLocation> = {
 };
 
 export function mapWeatherCode(code: number, isDay = true) {
-  if (code === 0) return { icon: isDay ? "☀️" : "🌙", label: "Clear", labelVi: "Troi quang" };
-  if ([1, 2].includes(code)) return { icon: isDay ? "🌤️" : "☁️", label: "Partly cloudy", labelVi: "It may" };
-  if (code === 3) return { icon: "☁️", label: "Cloudy", labelVi: "Nhieu may" };
-  if ([45, 48].includes(code)) return { icon: "🌫️", label: "Fog", labelVi: "Suong mu" };
-  if ([51, 53, 55, 56, 57].includes(code)) return { icon: "🌦️", label: "Drizzle", labelVi: "Mua phun" };
-  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return { icon: "🌧️", label: "Rain", labelVi: "Mua" };
-  if ([71, 73, 75, 77, 85, 86].includes(code)) return { icon: "❄️", label: "Snow", labelVi: "Tuyet" };
-  if ([95, 96, 99].includes(code)) return { icon: "⛈️", label: "Thunderstorm", labelVi: "Dong" };
-  return { icon: "🌡️", label: "Weather", labelVi: "Thoi tiet" };
+  if (code === 0) return { icon: isDay ? "\u2600\ufe0f" : "\ud83c\udf19", label: "Clear", labelVi: "Troi quang" };
+  if ([1, 2].includes(code)) return { icon: isDay ? "\ud83c\udf24\ufe0f" : "\u2601\ufe0f", label: "Partly cloudy", labelVi: "It may" };
+  if (code === 3) return { icon: "\u2601\ufe0f", label: "Cloudy", labelVi: "Nhieu may" };
+  if ([45, 48].includes(code)) return { icon: "\ud83c\udf2b\ufe0f", label: "Fog", labelVi: "Suong mu" };
+  if ([51, 53, 55, 56, 57].includes(code)) return { icon: "\ud83c\udf26\ufe0f", label: "Drizzle", labelVi: "Mua phun" };
+  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return { icon: "\ud83c\udf27\ufe0f", label: "Rain", labelVi: "Mua" };
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return { icon: "\u2744\ufe0f", label: "Snow", labelVi: "Tuyet" };
+  if ([95, 96, 99].includes(code)) return { icon: "\u26c8\ufe0f", label: "Thunderstorm", labelVi: "Dong" };
+  return { icon: "\ud83c\udf21\ufe0f", label: "Weather", labelVi: "Thoi tiet" };
 }
 
 export function getDeveloperMood(weather: Pick<WeatherData, "temperature" | "rain" | "precipitation" | "isDay" | "weatherCode">) {

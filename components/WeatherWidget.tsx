@@ -45,7 +45,7 @@ export default function WeatherWidget() {
     >
       <span aria-hidden>{weather.icon}</span>
       <span>{weather.location.shortName}</span>
-      <span className="text-blue-300">{weather.temperature}°C</span>
+      <span className="text-blue-300">{weather.temperature}&deg;C</span>
     </span>
   );
 }
