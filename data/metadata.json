@@ -9,12 +9,12 @@
     "type": "website",
     "title": "Vo Manh Khanh - Full-Stack Web Developer",
     "description": "Portfolio of Vo Manh Khanh — Full-Stack Developer with 5.5 years experience in ASP.NET, .NET Core, ReactJS, and cloud solutions.",
-    "images": ["/assets/img/profile-image.jpg"]
+    "images": ["/assets/img/profile-image.png"]
   },
   "twitter": {
     "card": "summary_large_image",
     "title": "Vo Manh Khanh - Full-Stack Web Developer",
     "description": "Portfolio of Vo Manh Khanh — Full-Stack Developer with 5.5 years experience in ASP.NET, .NET Core, ReactJS, and cloud solutions.",
-    "images": ["/assets/img/profile-image.jpg"]
+    "images": ["/assets/img/profile-image.png"]
   }
 }
