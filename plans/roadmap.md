@@ -6,7 +6,7 @@ Tài liệu này phác thảo toàn bộ quy trình công việc và lộ trình
 
 ## 📅 Tổng quan Lộ trình thực hiện
 
-Lộ trình được chia làm **5 giai đoạn chính**:
+Lộ trình được chia làm **7 giai đoạn chính**:
 
 ```mermaid
 graph TD
@@ -14,6 +14,7 @@ graph TD
     Phase2 --> Phase3[Giai đoạn 3: Mở rộng tính năng Core]
     Phase3 --> Phase4[Giai đoạn 4: Xây dựng Mục Giải trí]
     Phase4 --> Phase5[Giai đoạn 5: Tích hợp Minigames]
+    Phase5 --> Phase6[Giai đoạn 6: Sinh tài nguyên ảnh bằng AI]
 ```
 
 ### 1. Giai đoạn 1: Cập nhật dữ liệu & Thông tin CV
@@ -39,6 +40,10 @@ graph TD
 ### 6. Giai đoạn 6: Tích hợp các Trò chơi nhỏ (Minigames)
 *   **Mục tiêu**: Lập trình trực tiếp các minigame tương tác (như Rắn săn mồi, Xếp hình Tetris) bằng React/TypeScript/Tailwind CSS ngay trên giao diện web.
 *   **Tệp kế hoạch chi tiết**: [plans/06-minigames.md](file:///c:/CongViec/profiles-source/plans/06-minigames.md)
+
+### 7. Giai đoạn 7: Quy trình tạo và tối ưu hóa hình ảnh bằng AI
+*   **Mục tiêu**: Sử dụng các công cụ AI vẽ ảnh để sinh các tài nguyên độc bản, đồng bộ thiết kế 3D/Isometric cho tất cả vị trí có hình ảnh (dự án, bài viết, ảnh đại diện, game).
+*   **Tệp kế hoạch chi tiết**: [plans/07-generate-images.md](file:///c:/CongViec/profiles-source/plans/07-generate-images.md)
 
 ---
 
