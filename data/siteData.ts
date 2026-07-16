@@ -1,5 +1,5 @@
 /** ------------------------------------------------------------------
- *  Portfolio Data Adapter – Single source of truth via portfolio.json
+ *  Portfolio Data Adapter - Single source of truth via portfolio.json
  * ------------------------------------------------------------------ */
 
 import type {
@@ -18,7 +18,7 @@ import portfolio from "./portfolio.json";
 
 const data: any = portfolio;
 
-/* ─── Home data ─── */
+/* Home data */
 export const homeData: HomeData = {
   name: data.home?.name || "Phat Nguyen Tan",
   role: data.home?.role || ".NET Web Developer",
@@ -26,7 +26,7 @@ export const homeData: HomeData = {
   photoMobile: data.home?.photoMobile || "/assets/img/profile-image-mobile.png",
 };
 
-/* ─── Section data ─── */
+/* Section data */
 export const personalInfo: PersonalInfoGroup[] = data.personalInfo || [];
 export const stats: StatItem[] = data.stats || [];
 export const techStack: TechStackItem[] = data.techStack || [];
@@ -35,7 +35,7 @@ export const education: EducationItem[] = data.education || [];
 export const skills: SkillItem[] = data.skills || [];
 export const references: ReferenceItem[] = data.references || [];
 
-/* ─── Portfolio works ─── */
+/* Portfolio works */
 export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
   (item: any): PortfolioWork => ({
     id: item.id,
@@ -43,6 +43,10 @@ export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
     category: item.type || "Project",
     title: item.title,
     link: item.previewLink || undefined,
+    sourceLink: item.sourceLink || undefined,
+    screenshots: item.screenshots || [item.img].filter(Boolean),
+    teamSize: item.teamSize || "Solo / contract delivery",
+    features: item.features || (item.description ? [item.description] : []),
     project: item.project,
     client: item.client,
     role: item.role,
@@ -52,7 +56,7 @@ export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
   })
 );
 
-/* ─── Blog posts (static, images mapped to existing assets) ─── */
+/* Blog posts (static, images mapped to existing assets) */
 export const blogPosts: BlogPost[] = [
   { id: 1, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Own Your Audience by Creating an Email List", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
   { id: 2, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Top 10 Toolkits for Deep Learning in 2020", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
@@ -62,7 +66,7 @@ export const blogPosts: BlogPost[] = [
   { id: 6, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Evergreen versus topical content: An overview", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
 ];
 
-/* ─── Footer / contact ─── */
+/* Footer / contact */
 export const footerData = {
   name: data.footer?.name || "Phat Nguyen Tan",
   tagline: data.footer?.tagline || ".NET Web Developer",

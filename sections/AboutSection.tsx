@@ -12,21 +12,25 @@ import {
   references,
 } from "@/data/siteData";
 import { prefixAssetPath } from "@/lib/utils";
+import { useTunisContext } from "@/contexts/TunisContext";
 
 export default function AboutSection() {
+  const { t } = useTunisContext();
+  const about = t.about;
+
   return (
     <section id="about" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
       <div className="max-w-6xl w-full mx-auto">
-        <SectionTitle bigTitle="resume" colorTitle="me" normalTitle="about" />
+        <SectionTitle bigTitle={about.bigTitle} colorTitle={about.colorTitle} normalTitle={about.normalTitle} />
 
-        {/* Bento Row 1: Personal Info & Stats */}
+        {/* Bento Row 1: {about.personalInfo} & Stats */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-          {/* Personal Info Box */}
+          {/* {about.personalInfo} Box */}
           <div className="col-span-1 lg:col-span-6 glass-panel p-5 sm:p-8 rounded-2xl flex flex-col justify-between">
             <div>
               <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-6 text-zinc-100 flex items-center gap-3">
                 <i className="fa-solid fa-address-card text-blue-400" />
-                Personal Info
+                {about.personalInfo}
               </h3>
               <div className="hidden xs:block relative rounded-full border-4 border-solid border-zinc-800 w-[230px] h-[230px] mb-6 mx-auto overflow-hidden">
                 <Image
@@ -54,7 +58,7 @@ export default function AboutSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Download CV
+                {about.downloadCv}
                 <i className="fa-solid fa-download transition-transform duration-300 group-hover:translate-y-0.5" />
               </a>
             </div>
@@ -90,11 +94,9 @@ export default function AboutSection() {
                 >
                   <div className="flex items-start justify-between gap-4 mb-5">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-widest text-blue-400 block mb-2">
-                        References
-                      </span>
+                      <span className="text-[11px] font-bold uppercase tracking-widest text-blue-400 block mb-2">{about.references}</span>
                       <h3 className="text-fs-21 font-bold text-zinc-100">
-                        Nguoi gioi thieu
+                        {about.referenceTitle}
                       </h3>
                       <p className="mt-1 text-fs-14 font-bold text-zinc-100">
                         {reference.name}
@@ -134,7 +136,7 @@ export default function AboutSection() {
         <div className="mb-16">
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-8 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-layer-group text-blue-400" />
-            Core Technologies
+            {about.coreTechnologies}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {techStack.map((item) => (
@@ -158,7 +160,7 @@ export default function AboutSection() {
         <div className="mb-20">
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-10 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-code text-blue-400" />
-            Skills Proficiency
+            {about.skills}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {skills.map((skill) => (
@@ -186,11 +188,11 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Bento Row 4: Experience & Education Timeline */}
+        {/* Bento Row 4: {about.experienceEducation} Timeline */}
         <div>
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-12 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-timeline text-blue-400" />
-            Experience & Education
+            {about.experienceEducation}
           </h3>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -198,7 +200,7 @@ export default function AboutSection() {
             <div>
               <h4 className="text-fs-18 font-bold uppercase tracking-wider mb-8 text-zinc-300 flex items-center gap-3 pl-4 border-l-2 border-blue-500">
                 <i className="fa-solid fa-briefcase text-blue-400" />
-                Work Experience
+                {about.workExperience}
               </h4>
               <div className="space-y-6">
                 {experience.map((item) => (
@@ -217,13 +219,13 @@ export default function AboutSection() {
                     </span>
                     <div className="space-y-2 text-fs-13 font-Open-sans text-zinc-400 border-t border-white/5 pt-4 mt-4">
                       <p>
-                        <span className="font-semibold text-zinc-300">Project:</span> {item.projectName}
+                        <span className="font-semibold text-zinc-300">{about.project}:</span> {item.projectName}
                       </p>
                       <p>
-                        <span className="font-semibold text-zinc-300">Repo:</span> {item.desc}
+                        <span className="font-semibold text-zinc-300">{about.repo}:</span> {item.desc}
                       </p>
                       <p>
-                        <span className="font-semibold text-zinc-300">Stack:</span>{" "}
+                        <span className="font-semibold text-zinc-300">{about.stack}:</span>{" "}
                         <span className="text-blue-300/80">
                           {[item.be, item.fe, item.db, item.clound].filter(Boolean).join(", ")}
                         </span>
@@ -238,7 +240,7 @@ export default function AboutSection() {
             <div>
               <h4 className="text-fs-18 font-bold uppercase tracking-wider mb-8 text-zinc-300 flex items-center gap-3 pl-4 border-l-2 border-indigo-500">
                 <i className="fa-solid fa-graduation-cap text-indigo-400" />
-                Education Timeline
+                {about.educationTimeline}
               </h4>
               <div className="space-y-6">
                 {education.map((item) => (

@@ -70,6 +70,10 @@ export interface PortfolioWork {
   category: string;
   title: string;
   link?: string;
+  sourceLink?: string;
+  screenshots?: string[];
+  teamSize?: string;
+  features?: string[];
   project?: string;
   client?: string;
   role?: string;
