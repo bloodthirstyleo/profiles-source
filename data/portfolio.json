@@ -73,7 +73,7 @@
         {
           "id": 7,
           "type": "Phone",
-          "value": "(+84) 337 116 462"
+          "value": "0337116862"
         },
         {
           "id": 8,
@@ -213,33 +213,153 @@
       "title": "AI Travel Assistant & Smart Tour Recommendation Platform",
       "type": "website",
       "src": "",
-      "img": "/assets/img/projects/project-2.PNG",
-      "project": "Web Application",
+      "img": "/assets/img/projects/ai-travel-assistant.jpg",
+      "project": "AI Travel Platform",
       "client": "Travel Industry",
+      "role": "Full stack developer",
+      "date": "2025 - Present",
+      "description": "AI-powered travel assistant for destination suggestions, itineraries, and tour booking in Quy Nhon and Gia Lai.",
       "langages": "Next.js, NestJS, TailwindCSS, MySQL, OpenAI, DeepSeek",
-      "previewLink": ""
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/ai-travel-assistant.jpg"
+      ]
     },
     {
       "id": 2,
-      "title": "Mama's Pizza – Food Ordering & Admin Management",
+      "title": "Mama's Pizza - Food Ordering & Admin Management",
       "type": "website",
       "src": "",
-      "img": "/assets/img/projects/project-2.PNG",
+      "img": "/assets/img/projects/mamas-pizza.jpg",
       "project": "Food Ordering Platform",
       "client": "Mama's Pizza",
+      "role": "Full stack developer",
+      "date": "2025 - 2026",
+      "description": "Food ordering website and admin management system for restaurant operations.",
       "langages": "Next.js, NestJS, TailwindCSS, MySQL",
-      "previewLink": "https://mamapizza.vn/"
+      "previewLink": "https://mamapizza.vn/",
+      "screenshots": [
+        "/assets/img/projects/mamas-pizza.jpg"
+      ]
     },
     {
       "id": 3,
-      "title": "Thích Tour Management System",
+      "title": "Thich Tour Management System",
       "type": "website",
       "src": "",
-      "img": "/assets/img/projects/project-3.PNG",
+      "img": "/assets/img/projects/thich-tour-management.jpg",
       "project": "Tour Management System",
-      "client": "Thích Tour",
+      "client": "Thich Tour",
+      "role": "Full stack developer",
+      "date": "2024 - 2026",
+      "description": "Tour management system for operating tours, bookings, and back-office workflows.",
       "langages": "Angular 18, Ant Design, .NET 8, MariaDB, i18n",
-      "previewLink": ""
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/thich-tour-management.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Vidata - E-commerce Platform (Zalo Mini App)",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/vidata-zalo-mini-app.jpg",
+      "project": "E-commerce Zalo Mini App",
+      "client": "Vidata",
+      "role": "Front-end developer",
+      "date": "2024 - 2024",
+      "description": "E-commerce storefront built as a Zalo Mini App integrated with WooCommerce and WordPress.",
+      "langages": "React.js, Recoil, Zalo Mini App SDK, WooCommerce, WordPress",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/vidata-zalo-mini-app.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Online Learning Management System for English Center",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/english-center-lms.jpg",
+      "project": "Learning Management System",
+      "client": "English Center",
+      "role": "Front-end developer",
+      "date": "2023 - 2024",
+      "description": "Online learning platform for English center courses and student management.",
+      "langages": "Angular 16, SSR, .NET 7",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/english-center-lms.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Thich Tour Booking Website",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/thich-tour-booking.jpg",
+      "project": "Tour Booking Website",
+      "client": "Thich Tour",
+      "role": "Front-end developer",
+      "date": "2023 - 2023",
+      "description": "Public tour booking website for browsing packages and sending booking requests.",
+      "langages": "WordPress, JavaScript",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/thich-tour-booking.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Houzi Real Estate Platform",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/houzi-real-estate.jpg",
+      "project": "Real Estate Platform",
+      "client": "Houzi",
+      "role": "Front-end developer & Mobile App",
+      "date": "2022 - 2023",
+      "description": "Real estate platform with web and mobile app experiences for property discovery.",
+      "langages": "WordPress, Flutter, .NET 6",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/houzi-real-estate.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Bahnar Dictionary Website",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/bahnar-dictionary.jpg",
+      "project": "Dictionary Website",
+      "client": "Bahnar Dictionary",
+      "role": "Front-end developer",
+      "date": "2022 - 2022",
+      "description": "Dictionary website for Bahnar language lookup and content browsing.",
+      "langages": "Angular 14, .NET 6",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/bahnar-dictionary.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Kindergarten Management System",
+      "type": "website",
+      "src": "",
+      "img": "/assets/img/projects/kindergarten-management.jpg",
+      "project": "School Management System",
+      "client": "Kindergarten",
+      "role": "Front-end developer",
+      "date": "2021 - 2022",
+      "description": "Management system for kindergarten administration and daily operations.",
+      "langages": "Angular 14, .NET 6",
+      "previewLink": "",
+      "screenshots": [
+        "/assets/img/projects/kindergarten-management.jpg"
+      ]
     }
   ],
   "socialLinks": [
@@ -260,11 +380,11 @@
     }
   ],
   "footer": {
-    "name": "Phat Nguyen Tan",
-    "tagline": ".NET Web Developer — Ho Chi Minh City",
-    "email": "nguyentanphatuit@mail.com",
-    "phone": "(+84) 869 164 648",
-    "copyright": "2026 Phat Nguyen Tan. All rights reserved."
+    "name": "Vo Manh Khanh",
+    "tagline": "Full Stack Web Developer - Ho Chi Minh City",
+    "email": "bloodthirstyleo@gmail.com",
+    "phone": "0337116862",
+    "copyright": "2026 Vo Manh Khanh. All rights reserved."
   },
   "hobbies": [
     {
@@ -304,7 +424,10 @@
           "name": "Node.js",
           "primary": true
         },
-        { "name": "NestJS", "primary": true },
+        {
+          "name": "NestJS",
+          "primary": true
+        },
         {
           "name": "ASP.NET Core",
           "primary": false
@@ -354,7 +477,10 @@
           "name": "Next.js",
           "primary": true
         },
-        { "name": "Tailwind CSS", "primary": true },
+        {
+          "name": "Tailwind CSS",
+          "primary": true
+        },
         {
           "name": "CSS3",
           "primary": true
@@ -370,7 +496,7 @@
         {
           "name": "JavaScript",
           "primary": true
-        },       
+        },
         {
           "name": "HTML5",
           "primary": true
@@ -413,6 +539,14 @@
           "primary": false
         }
       ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Nguyen Tan Phat",
+      "role": "Senior Back-end Developer",
+      "email": "nguyentanphatuit@gmail.com",
+      "phone": "0869164648"
     }
   ]
 }

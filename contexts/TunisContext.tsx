@@ -2,16 +2,14 @@
 
 import React, {
   createContext,
+  useCallback,
   useContext,
   useReducer,
-  useCallback,
   ReactNode,
 } from "react";
-import type { BlogPost } from "@/data/siteData";
+import { messagesByLocale, type Locale, type Messages } from "@/data/i18n";
+import type { BlogPost } from "@/lib/types";
 
-/* ------------------------------------------------------------------
- * Action Types
- * ------------------------------------------------------------------ */
 const ACTIONS = {
   NAV: "NAV",
   TOGGLE: "TOGGLE",
@@ -19,11 +17,9 @@ const ACTIONS = {
   DIRECTION: "DIRECTION",
   POPUP: "POPUP",
   DARK: "DARK",
+  LOCALE: "LOCALE",
 } as const;
 
-/* ------------------------------------------------------------------
- * State Shape
- * ------------------------------------------------------------------ */
 interface TunisState {
   nav: string;
   toggle: boolean;
@@ -32,6 +28,7 @@ interface TunisState {
   popup: string | null;
   blogs: BlogPost[];
   dark: boolean;
+  locale: Locale;
 }
 
 const initialState: TunisState = {
@@ -42,18 +39,17 @@ const initialState: TunisState = {
   popup: null,
   blogs: [],
   dark: true,
+  locale: "en",
 };
 
-/* ------------------------------------------------------------------
- * Reducer
- * ------------------------------------------------------------------ */
 type Action =
   | { type: typeof ACTIONS.NAV; payload: string }
   | { type: typeof ACTIONS.TOGGLE; payload: boolean }
   | { type: typeof ACTIONS.COLOR; payload: string }
   | { type: typeof ACTIONS.DIRECTION; payload: string }
   | { type: typeof ACTIONS.POPUP; payload: string | null }
-  | { type: typeof ACTIONS.DARK; payload: boolean };
+  | { type: typeof ACTIONS.DARK; payload: boolean }
+  | { type: typeof ACTIONS.LOCALE; payload: Locale };
 
 function tunisReducer(state: TunisState, action: Action): TunisState {
   switch (action.type) {
@@ -69,20 +65,22 @@ function tunisReducer(state: TunisState, action: Action): TunisState {
       return { ...state, popup: action.payload };
     case ACTIONS.DARK:
       return { ...state, dark: action.payload };
+    case ACTIONS.LOCALE:
+      return { ...state, locale: action.payload };
     default:
       return state;
   }
 }
 
-/* ------------------------------------------------------------------
- * Context
- * ------------------------------------------------------------------ */
 interface TunisContextValue extends TunisState {
   changeNav: (nav: string, toggle: boolean) => void;
   changeColor: (color: string) => void;
   changeDirection: (direction: string) => void;
   popupToggle: (popup: string | null) => void;
   darkToggle: (dark: boolean) => void;
+  setLocale: (locale: Locale) => void;
+  messages: Messages;
+  t: Messages;
 }
 
 const TunisContext = createContext<TunisContextValue | undefined>(undefined);
@@ -95,9 +93,6 @@ export function useTunisContext() {
   return ctx;
 }
 
-/* ------------------------------------------------------------------
- * Provider
- * ------------------------------------------------------------------ */
 export function TunisProvider({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(tunisReducer, initialState);
 
@@ -122,6 +117,11 @@ export function TunisProvider({ children }: { children: ReactNode }) {
     dispatch({ type: ACTIONS.DARK, payload: dark });
   }, []);
 
+  const setLocale = useCallback((locale: Locale) => {
+    dispatch({ type: ACTIONS.LOCALE, payload: locale });
+  }, []);
+
+  const messages = messagesByLocale[state.locale];
   const value: TunisContextValue = {
     ...state,
     changeNav,
@@ -129,9 +129,10 @@ export function TunisProvider({ children }: { children: ReactNode }) {
     changeDirection,
     popupToggle,
     darkToggle,
+    setLocale,
+    messages,
+    t: messages,
   };
 
-  return (
-    <TunisContext.Provider value={value}>{children}</TunisContext.Provider>
-  );
+  return <TunisContext.Provider value={value}>{children}</TunisContext.Provider>;
 }

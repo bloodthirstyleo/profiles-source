@@ -81,6 +81,30 @@ const config: Config = {
         85: "85px",
         230: "230px",
       },
+      blur: {
+        "4xl": "96px",
+        "5xl": "128px",
+      },
+      boxShadow: {
+        glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+        "skin-glow": "0 18px 70px -28px var(--skin-shadow-color, rgba(59, 130, 246, 0.45))",
+        "skin-card": "0 14px 40px -18px var(--skin-shadow-color, rgba(59, 130, 246, 0.45))",
+      },
+      animation: {
+        "aurora-slow": "aurora-1 32s infinite alternate ease-in-out",
+        "aurora-medium": "aurora-2 24s infinite alternate ease-in-out",
+      },
+      keyframes: {
+        "aurora-1": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1)" },
+          "33%": { transform: "translate3d(36px, -56px, 0) scale(1.18)" },
+          "66%": { transform: "translate3d(-28px, 24px, 0) scale(0.92)" },
+        },
+        "aurora-2": {
+          "0%, 100%": { transform: "translate3d(0, 0, 0) scale(1.12)" },
+          "50%": { transform: "translate3d(-48px, 42px, 0) scale(0.88)" },
+        },
+      },
     },
   },
   plugins: [],

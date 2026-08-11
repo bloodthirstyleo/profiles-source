@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useTunisContext } from "@/contexts/TunisContext";
+import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
+import Reveal from "@/components/Reveal";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 import { blogPosts } from "@/data/siteData";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+import { prefixAssetPath } from "@/lib/utils";
 
 /** Blog posts section with pagination-like grid display. */
 export default function BlogSection() {
-  const { dark } = useTunisContext();
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 3;
   const totalPages = Math.ceil(blogPosts.length / itemsPerPage);
@@ -20,50 +20,76 @@ export default function BlogSection() {
   );
 
   return (
-    <section id="blog" className="relative w-full">
-      <div className="w-full">
+    <section id="blog" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8 overflow-hidden">
+      <AuroraBackdrop />
+      <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle="posts" colorTitle="blog" normalTitle="my" />
 
-        <div className="xl:max-w-1140 custom-md-3:max-w-[calc(100%-195px)] lg:max-w-960 md:max-w-720 sm:max-w-540 xs:max-w-full mx-auto">
-          <div className="flex flex-wrap -mx-4">
-            {paginated.map((post) => (
-              <div key={post.id} className="w-1/2 down-sm:w-full px-4 mb-8">
-                <div className="blog-list-item cursor-pointer rounded-5 group">
-                  <img
-                    src={`${basePath}${post.img}`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+          {paginated.map((post, index) => {
+            const tags = post.tags.split(",").map((tag) => tag.trim()).filter(Boolean);
+            return (
+              <Reveal
+                key={post.id}
+                as="article"
+                delay={(index % 3) * 90}
+                className="group relative glass-panel glass-panel-hover rounded-2xl p-4 flex flex-col cursor-pointer overflow-hidden hover:shadow-skin-glow will-change-transform"
+              >
+                <div className="relative aspect-video rounded-xl overflow-hidden mb-4 bg-zinc-900/50 border border-white/5">
+                  <Image
+                    src={prefixAssetPath(post.img)}
                     alt={post.title}
-                    className="w-full h-auto rounded-5"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className={`blog-overlay absolute inset-0 flex flex-col items-center justify-center p-6 text-center rounded-5 ${dark ? "bg-black/80" : "bg-white/90"}`}>
-                    <span className="text-fs-13 text-accent uppercase font-semibold mb-2">
-                      {post.tags}
+                </div>
+
+                <div className="px-1 flex flex-col flex-1">
+                  {tags[0] && (
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-blue-400 block mb-2">
+                      {tags[0]}
                     </span>
-                    <h5 className="text-fs-18 font-semibold mb-3">{post.title}</h5>
-                    <span className="text-fs-13 text-light-grey">{post.date}</span>
+                  )}
+                  <h5 className="text-fs-16 font-bold text-zinc-100 group-hover:text-blue-400 transition-colors duration-300 leading-snug">
+                    {post.title}
+                  </h5>
+                  <p className="mt-2 text-fs-12 text-zinc-500 font-Open-sans leading-relaxed line-clamp-2">
+                    {post.desc}
+                  </p>
+                  <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-fs-12 font-Open-sans text-zinc-500">
+                    <span>{post.date}</span>
+                    <span className="inline-flex items-center gap-1.5 text-blue-400 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300">
+                      Read
+                      <i className="fa-solid fa-arrow-right text-[10px]" />
+                    </span>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-6">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`mx-1 w-10 h-10 rounded-full flex items-center justify-center text-fs-14 font-semibold transition ${
-                  currentPage === page
-                    ? "bg-accent text-white"
-                    : dark
-                    ? "bg-black-3 text-white hover:bg-accent"
-                    : "bg-grey text-black-6 hover:bg-accent hover:text-white"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-          </div>
+              </Reveal>
+            );
+          })}
         </div>
+
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-12">
+            <div className="glass-panel p-1.5 rounded-full flex gap-1">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                <button
+                  key={page}
+                  type="button"
+                  onClick={() => setCurrentPage(page)}
+                  className={`w-9 h-9 rounded-full flex items-center justify-center text-fs-13 font-semibold transition-all duration-300 ${
+                    currentPage === page
+                      ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                      : "text-zinc-400 hover:text-zinc-200 hover:bg-white/[0.03]"
+                  }`}
+                >
+                  {page}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

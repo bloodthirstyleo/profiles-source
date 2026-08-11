@@ -1,28 +1,24 @@
 /** ------------------------------------------------------------------
- *  Portfolio Data Adapter – Single source of truth via portfolio.json
+ *  Portfolio Data Adapter - Single source of truth via portfolio.json
  * ------------------------------------------------------------------ */
 
+import type {
+  BlogPost,
+  EducationItem,
+  ExperienceItem,
+  HomeData,
+  PersonalInfoGroup,
+  PortfolioWork,
+  ReferenceItem,
+  SkillItem,
+  StatItem,
+  TechStackItem,
+} from "@/lib/types";
 import portfolio from "./portfolio.json";
 
 const data: any = portfolio;
 
-/* ─── Interfaces ─── */
-export interface PersonalInfoItem { id: number; type: string; value: string; }
-export interface PersonalInfoGroup { id: number; data: PersonalInfoItem[]; }
-export interface StatItem { id: number; title: string; value: string; }
-export interface TechStackItem { id: number; title: string; value: string; }
-export interface ExperienceItem {
-  id: number; date: string; title: string; company: string;
-  projectName: string; desc: string; be: string; fe: string;
-  db: string; clound: string;
-}
-export interface EducationItem { id: number; date: string; title: string; unv: string; desc: string; }
-export interface SkillItem { id: number; name: string; value: string; }
-export interface BlogPost { id: number; author: string; date: string; tags: string; title: string; img: string; desc: string; }
-export interface PortfolioWork { id: number; src: string; category: string; title: string; link?: string; }
-export interface HomeData { name: string; role: string; photo: string; photoMobile: string; }
-
-/* ─── Home data ─── */
+/* Home data */
 export const homeData: HomeData = {
   name: data.home?.name || "Phat Nguyen Tan",
   role: data.home?.role || ".NET Web Developer",
@@ -30,15 +26,16 @@ export const homeData: HomeData = {
   photoMobile: data.home?.photoMobile || "/assets/img/profile-image-mobile.png",
 };
 
-/* ─── Section data ─── */
+/* Section data */
 export const personalInfo: PersonalInfoGroup[] = data.personalInfo || [];
 export const stats: StatItem[] = data.stats || [];
 export const techStack: TechStackItem[] = data.techStack || [];
 export const experience: ExperienceItem[] = data.experience || [];
 export const education: EducationItem[] = data.education || [];
 export const skills: SkillItem[] = data.skills || [];
+export const references: ReferenceItem[] = data.references || [];
 
-/* ─── Portfolio works ─── */
+/* Portfolio works */
 export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
   (item: any): PortfolioWork => ({
     id: item.id,
@@ -46,20 +43,30 @@ export const portfolioWorks: PortfolioWork[] = (data.portfolio || []).map(
     category: item.type || "Project",
     title: item.title,
     link: item.previewLink || undefined,
+    sourceLink: item.sourceLink || undefined,
+    screenshots: item.screenshots || [item.img].filter(Boolean),
+    teamSize: item.teamSize || "Solo / contract delivery",
+    features: item.features || (item.description ? [item.description] : []),
+    project: item.project,
+    client: item.client,
+    role: item.role,
+    date: item.date,
+    description: item.description,
+    langages: item.langages,
   })
 );
 
-/* ─── Blog posts (static, images mapped to existing assets) ─── */
+/* Blog posts (static, images mapped to generated assets) */
 export const blogPosts: BlogPost[] = [
-  { id: 1, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Own Your Audience by Creating an Email List", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 2, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Top 10 Toolkits for Deep Learning in 2020", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 3, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Everything You Need to Know About Web Accessibility", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 4, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Inject Humor & Comedy Into Your Brand", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 5, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Women in Web Design: How To Achieve Success", img: "/assets/img/projects/project-2.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
-  { id: 6, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Evergreen versus topical content: An overview", img: "/assets/img/projects/project-3.PNG", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 1, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Own Your Audience by Creating an Email List", img: "/assets/img/blog/email-list.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 2, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Top 10 Toolkits for Deep Learning in 2020", img: "/assets/img/blog/deep-learning-toolkits.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 3, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Everything You Need to Know About Web Accessibility", img: "/assets/img/blog/web-accessibility.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 4, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "How to Inject Humor & Comedy Into Your Brand", img: "/assets/img/blog/humor-brand.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 5, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Women in Web Design: How To Achieve Success", img: "/assets/img/blog/women-web-design.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
+  { id: 6, author: "steve", date: "09 December 2023", tags: "wordpress, business, economy, design", title: "Evergreen versus topical content: An overview", img: "/assets/img/blog/evergreen-content.jpg", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit..." },
 ];
 
-/* ─── Footer / contact ─── */
+/* Footer / contact */
 export const footerData = {
   name: data.footer?.name || "Phat Nguyen Tan",
   tagline: data.footer?.tagline || ".NET Web Developer",
