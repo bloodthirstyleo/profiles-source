@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SectionTitle from "@/components/SectionTitle";
+import Reveal from "@/components/Reveal";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 import { homeData } from "@/data/siteData";
 import {
   personalInfo,
@@ -114,12 +116,13 @@ export default function AboutSection() {
   const about = t.about;
 
   return (
-    <section id="about" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
+    <section id="about" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8 overflow-hidden">
+      <AuroraBackdrop />
       <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle={about.bigTitle} colorTitle={about.colorTitle} normalTitle={about.normalTitle} />
 
         {/* Bento Row 1: {about.personalInfo} & Stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
+        <Reveal as="div" className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
           {/* {about.personalInfo} Box */}
           <div className="col-span-1 lg:col-span-6 glass-panel p-5 sm:p-8 rounded-2xl flex flex-col justify-between">
             <div>
@@ -177,10 +180,10 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         {references.length > 0 && (
-          <div className="mb-16">
+          <Reveal as="div" className="mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {references.map((reference) => (
                 <div
@@ -224,14 +227,14 @@ export default function AboutSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </Reveal>
         )}
 
-        <div className="mb-16">
+        <Reveal as="div" className="mb-16">
           <WeatherBentoCard />
-        </div>
+        </Reveal>
         {/* Bento Row 2: Tech Stack Category */}
-        <div className="mb-16">
+        <Reveal as="div" className="mb-16">
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-8 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-layer-group text-blue-400" />
             {about.coreTechnologies}
@@ -252,10 +255,10 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         {/* Bento Row 3: Skills with Modern Progress Bars */}
-        <div className="mb-20">
+        <Reveal as="div" className="mb-20">
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-10 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-code text-blue-400" />
             {about.skills}
@@ -264,7 +267,7 @@ export default function AboutSection() {
             {skills.map((skill) => (
               <div
                 key={skill.id}
-                className="glass-panel p-5 rounded-2xl flex flex-col justify-between"
+                className="glass-panel glass-panel-hover p-5 rounded-2xl flex flex-col justify-between"
               >
                 <div className="flex justify-between items-center mb-3">
                   <span className="text-fs-14 font-semibold text-zinc-200 uppercase tracking-wide">
@@ -284,15 +287,15 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
         {/* Bento Row 4: {about.experienceEducation} Timeline */}
-        <div>
+        <Reveal as="div">
           <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-12 text-center text-zinc-100 flex items-center justify-center gap-3">
             <i className="fa-solid fa-timeline text-blue-400" />
             {about.experienceEducation}
           </h3>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Experience Column */}
             <div>
@@ -363,7 +366,7 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
 
       </div>
     </section>

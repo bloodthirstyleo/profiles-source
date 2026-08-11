@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
+import Reveal from "@/components/Reveal";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 import { portfolioWorks } from "@/data/siteData";
 import { prefixAssetPath } from "@/lib/utils";
 import { useTunisContext } from "@/contexts/TunisContext";
@@ -19,11 +21,12 @@ export default function PortfolioSection() {
       : portfolioWorks.filter((w) => w.category === activeFilter);
 
   return (
-    <section id="works" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
+    <section id="works" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8 overflow-hidden">
+      <AuroraBackdrop />
       <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle={t.section.worksBig} colorTitle={t.section.worksColor} normalTitle={t.section.worksNormal} />
 
-        <div className="flex justify-center mb-12">
+        <Reveal as="div" className="flex justify-center mb-12">
           <div className="glass-panel p-1.5 rounded-full flex flex-wrap gap-2 max-w-full overflow-x-auto justify-center">
             {categories.map((cat) => {
               const isActive = activeFilter === cat;
@@ -43,12 +46,14 @@ export default function PortfolioSection() {
               );
             })}
           </div>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
-          {filtered.map((work) => (
-            <article
+          {filtered.map((work, index) => (
+            <Reveal
               key={work.id}
+              as="article"
+              delay={(index % 3) * 90}
               className="group relative glass-panel glass-panel-hover p-4 rounded-2xl flex flex-col justify-between overflow-hidden hover:shadow-skin-glow will-change-transform"
             >
               <div className="relative rounded-xl overflow-hidden aspect-video mb-4 bg-zinc-900/50 border border-white/5">
@@ -101,7 +106,7 @@ export default function PortfolioSection() {
                   </p>
                 )}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -2,6 +2,8 @@
 
 import { useState, FormEvent } from "react";
 import SectionTitle from "@/components/SectionTitle";
+import Reveal from "@/components/Reveal";
+import AuroraBackdrop from "@/components/AuroraBackdrop";
 import { footerData } from "@/data/siteData";
 import { useTunisContext } from "@/contexts/TunisContext";
 
@@ -50,12 +52,13 @@ export default function ContactSection() {
   const statusText = status === "success" ? contact.success : status === "error" ? contact.error : "";
 
   return (
-    <section id="contact" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8">
+    <section id="contact" className="relative w-full pt-20 md:pt-28 pb-16 md:pb-20 px-4 sm:px-6 md:px-8 overflow-hidden">
+      <AuroraBackdrop />
       <div className="max-w-6xl w-full mx-auto">
         <SectionTitle bigTitle={t.section.contactBig} colorTitle={t.section.contactColor} normalTitle={t.section.contactNormal} />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div className="col-span-1 lg:col-span-5 glass-panel p-8 rounded-2xl flex flex-col justify-between h-full">
+          <Reveal as="div" className="col-span-1 lg:col-span-5 glass-panel p-8 rounded-2xl flex flex-col justify-between h-full">
             <div>
               <h3 className="text-fs-21 font-bold uppercase tracking-wider mb-4 text-zinc-100 flex items-center gap-3">
                 <i className="fa-solid fa-handshake text-blue-400" />
@@ -125,9 +128,9 @@ export default function ContactSection() {
                 ))}
               </div>
             )}
-          </div>
+          </Reveal>
 
-          <div className="col-span-1 lg:col-span-7 glass-panel p-8 rounded-2xl">
+          <Reveal as="div" delay={150} className="col-span-1 lg:col-span-7 glass-panel p-8 rounded-2xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <input
@@ -180,7 +183,7 @@ export default function ContactSection() {
                 )}
               </div>
             </form>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

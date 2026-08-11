@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTunisContext } from "@/contexts/TunisContext";
 import WeatherWidget from "@/components/WeatherWidget";
 
@@ -17,6 +17,9 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const pathname = usePathname();
   const { changeNav, dark, darkToggle, locale, setLocale, messages } = useTunisContext();
+  const [scrolled, setScrolled] = useState(false);
+  const navRefs = useRef<Record<string, HTMLAnchorElement | null>>({});
+  const [pillStyle, setPillStyle] = useState<{ left: number; width: number } | null>(null);
 
   useEffect(() => {
     const activeItem = NAV_ITEMS.find((item) => item.href === pathname);
@@ -24,6 +27,22 @@ export default function Navbar() {
       changeNav(activeItem.stateName, false);
     }
   }, [pathname, changeNav]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const activeEl = navRefs.current[pathname];
+    if (activeEl) {
+      setPillStyle({ left: activeEl.offsetLeft, width: activeEl.offsetWidth });
+    } else {
+      setPillStyle(null);
+    }
+  }, [pathname]);
 
   const controls = (
     <div className="flex items-center gap-2">
@@ -50,29 +69,46 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
-        <nav className="glass-panel px-6 py-3 rounded-full flex gap-6 items-center">
+      <header
+        className={`fixed left-1/2 -translate-x-1/2 z-50 hidden md:block transition-all duration-500 ${
+          scrolled ? "top-3" : "top-6"
+        }`}
+      >
+        <nav
+          className={`glass-panel px-6 py-3 rounded-full flex gap-6 items-center transition-shadow duration-500 ${
+            scrolled ? "shadow-skin-glow" : ""
+          }`}
+        >
           <Link href="/" className="text-fs-18 font-bold mr-2 text-gradient select-none">
             {messages.nav.brand}
           </Link>
           <WeatherWidget />
-          {NAV_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative px-3 py-1.5 text-fs-14 font-medium uppercase tracking-wider transition-all duration-300 hover:text-blue-400 ${
-                  isActive ? "text-blue-400 font-semibold" : "text-zinc-400"
-                }`}
-              >
-                {messages.nav[item.key]}
-                {isActive && (
-                  <span className="absolute bottom-[-4px] left-0 right-0 h-[2px] bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full" />
-                )}
-              </Link>
-            );
-          })}
+          <div className="relative flex gap-6 items-center">
+            {pillStyle && (
+              <span
+                className="nav-pill"
+                style={{ left: pillStyle.left, width: pillStyle.width }}
+                aria-hidden="true"
+              />
+            )}
+            {NAV_ITEMS.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  ref={(el) => {
+                    navRefs.current[item.href] = el;
+                  }}
+                  className={`relative z-[1] px-3 py-1.5 text-fs-14 font-medium uppercase tracking-wider transition-all duration-300 hover:text-blue-400 ${
+                    isActive ? "text-blue-400 font-semibold" : "text-zinc-400"
+                  }`}
+                >
+                  {messages.nav[item.key]}
+                </Link>
+              );
+            })}
+          </div>
           {controls}
         </nav>
       </header>

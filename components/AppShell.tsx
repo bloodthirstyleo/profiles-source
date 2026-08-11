@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Popup from "@/components/Popup";
 import ThreeBackground from "@/components/ThreeBackground";
+import CursorGlow from "@/components/CursorGlow";
 import { useTunisContext } from "@/contexts/TunisContext";
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
@@ -19,6 +20,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <div className="fixed inset-0 -z-50 overflow-hidden bg-[var(--page-bg)] pointer-events-none select-none transition-colors duration-300">
         <ThreeBackground />
       </div>
+      <CursorGlow />
       <Navbar />
       <div className="relative w-full min-h-screen">{children}</div>
       <Popup />
